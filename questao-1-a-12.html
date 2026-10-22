@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- ==========================================
+         METADADOS E CONFIGURAÇÕES DA PÁGINA
+         ========================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Ícone da aba do navegador (Favicon) -->
     <link rel="shortcut icon" href="imagens/Pictogrammers-Material-Alphabet-Alpha-l-circle-outline.24.png" type="image/x-icon">
+    
     <title>Lart's Rygussa</title>
+
+    <!-- ==========================================
+         ESTILOS CSS (Design e Layout)
+         ========================================== -->
     <style>
+        /* --- Configurações Globais / Reset --- */
         *{
             margin: 0;
             padding: 0;
@@ -14,10 +25,11 @@
         body{
             background-image: url("imagens/fundo_nav1.png");
         }
+
+        /* --- Cabeçalho e Identidade (Logo) --- */
         .hotbar{
             background-color: #F3ECE0;
         }
-
         .logo{
             margin: 5px;
             padding: 10px;
@@ -27,12 +39,12 @@
             color: rgb(0, 0, 0);
         }
 
+        /* --- Menus de Navegação --- */
         nav{
             display: flex;
             justify-content: space-between;
             align-content: center;
         }
-
         ul{
             margin: 10px;
             padding: 15px;
@@ -40,90 +52,88 @@
             gap: 30px;
             list-style: none;
         }
-
         .navegacao{
             a{
                 text-decoration: none;
                 color: rgb(255, 140, 0);
             }
-
             ul{
                 margin: auto;
             }
         }
 
+        /* --- Seção Principal (Slogan e Banner) --- */
         .secao-1{
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-           
         }
-
         .secao-1 .slogan{
             margin-top: 60px;
             margin-bottom: 15px;
             font-size: 20px;
         }
-
         .secao-1 h1{
             margin-bottom: 40px;
         }
-
         .secao-1 img{
             width: 700px;
             max-width: 90%;
             border-radius: 15px;
         }
 
+        /* --- Seção Secundária (Catálogo de Imagens Adaptável) --- */
         .secao-2{
             display: flex;
-                        flex-direction: column;
+            flex-direction: column;   /* Mantém o título no topo e o container de fotos embaixo */
             align-items: center;
             text-align: center;
-           
+            padding: 20px;
         }
-
-        .secao-2 .slogan{
-            margin-top: 60px;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
         .secao-2 h2{
             margin-bottom: 40px;
         }
-
-        .secao-2 img{
-            align-items: baseline;
-            max-width: 90%;
-            padding: 25px;
-            border-radius: 45px;
+        /* Novo container para agrupar apenas as fotos do catálogo */
+        .catalogo-container {
+            display: flex;
+            flex-wrap: wrap;          /* ATALHO MÁGICO: Força as imagens a irem para a linha de baixo se faltar espaço */
+            justify-content: center;  /* Centraliza as imagens na linha */
+            gap: 20px;                /* Cria um espaçamento uniforme entre as imagens */
+            width: 100%;
         }
-       
+        .secao-2 img{
+            width: 280px;             /* Define um tamanho base padrão para cada foto do catálogo */
+            max-width: 90%;           /* Garante adaptabilidade em telas muito pequenas */
+            height: auto;             /* Mantém a proporção correta de altura das imagens */
+            padding: 5px;             /* Ajustado para acomodar melhor os itens lado a lado */
+            border-radius: 45px;      /* Deixa os cantos bem arredondados */
+            object-fit: cover;        /* Faz com que a imagem preencha o espaço sem distorcer */
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- ==========================================
+         TOPO DA PÁGINA (Header & Menu Ícones)
+         ========================================== -->
     <header>
         <nav class="hotbar">
             <a class="logo" href="questao-1-a-12.html">Lart's</a>
 
-
+            <!-- Ícones utilitários da barra superior -->
             <ul>
                 <li>
                     <a href="#">
                         <img src="imagens/icons/lupa/Iconsmind-Outline-Magnifi-Glass-2-2.32.png" alt="Painel de Pesquisa">
                     </a>
                 </li>
-
                 <li>
                     <a href="aba-carrinho.html">
                         <img src="imagens/icons/bolsa/Ionic-Ionicons-Bag-handle-outline.32.png" alt="Aba Carrinho">
                     </a>
                 </li>
-
                 <li>
                     <a href="#">
                         <img src="imagens/icons/user/Custom-Icon-Design-Silky-Line-User-User-2.32.png" alt="Aba de conta do user">
@@ -133,6 +143,7 @@
         </nav>
     </header>
 
+    <!-- Menu de Links Principais (Âncoras) -->
     <nav class="navegacao" aria-label="Navegação principal">
         <ul>
             <li><a href="#inicio">Início</a></li>
@@ -143,41 +154,50 @@
         </ul>
     </nav>
 
+    <!-- ==========================================
+         CONTEÚDO PRINCIPAL (Main)
+         ========================================== -->
     <main>
 
+        <!-- Seção 1: Boas-vindas e Banner Principal -->
         <section class="secao-1" id="inicio">
-
             <h1>Lart's - Moda que expressa quem você é</h1>
-
             <img src="imagens/pag 2/pexels-rayoverde-39299078.jpg" alt="Imagem principal da Lart's">
-
         </section>
 
+        <!-- Seção 2: Galeria de Produtos (Catálogo Inicial) -->
         <section class="secao-2">
             <h2 id="sobre">Catálogo Inicial</h2>
-
-            <img src="imagens/pag 2/pexels-ferhuelgas-33641191.jpg" alt="">
-            <img src="imagens/pag 2/pexels-siarhei-nester-318033361-40293517.jpg" alt="">
-            <img src="imagens/pag 2/pexels-cottonbro-9862589.jpg" alt="">
-            <img src="imagens/pag 2/pexels-thisismcfollis-38268026.jpg" alt="">
+            
+            <!-- Grupo de imagens envelopado para ativar o alinhamento flexível -->
+            <div class="catalogo-container">
+                <img src="imagens/pag 2/pexels-ferhuelgas-33641191.jpg" alt="Produto do catálogo 1">
+                <img src="imagens/pag 2/pexels-siarhei-nester-318033361-40293517.jpg" alt="Produto do catálogo 2">
+                <img src="imagens/pag 2/pexels-cottonbro-9862589.jpg" alt="Produto do catálogo 3">
+                <img src="imagens/pag 2/pexels-thisismcfollis-38268026.jpg" alt="Produto do catálogo 4">
+            </div>
         </section>
 
+        <!-- Seções Reservadas para Futuras Expansões (Manutenção) -->
         <section class="secao-3">
-
+            <!-- Adicionar conteúdo extra ou blocos promocionais aqui -->
         </section>
 
         <article>
-
+            <!-- Reservado para postagens, artigos de blog ou comunicados -->
         </article>
 
         <aside>
-
+            <!-- Barra lateral: Ideal para banners, filtros de busca ou redes sociais -->
         </aside>
 
     </main>
 
+    <!-- ==========================================
+         RODAPÉ DA PÁGINA (Footer)
+         ========================================== -->
     <footer>
-
+        <!-- Adicionar direitos autorais, links institucionais e contatos aqui -->
     </footer>
 
 </body>

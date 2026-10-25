@@ -1,68 +1,45 @@
-
-*{
+/* ==========================================
+   1. CONFIGURAÇÕES GLOBAIS / RESET
+   ========================================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.hotbar{
-    background-color: antiquewhite;
-}
-.logo{
-    margin: 5px;
-    padding: 10px;
-    font-size: 45px;
-    font-weight: bold;
-}
-.logo a{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-}
-ul{
-    margin: 10px;
-    padding: 15px;
-    display: flex;
-    gap: 30px;
-    list-style: none;
 
-}
-body{
-    background-image: url("imagens/modelo.png");
-    background-repeat: no-repeat;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
+body {
     background-image: url("imagens/fundo_nav1.png");
-}
-.hotbar{
-    background-color: #faebd7;
+    /* Garante consistência de fonte padrão do seu navegador nas páginas do site */
+    font-family: inherit; 
 }
 
-.logo{
+/* ==========================================
+   2. CABEÇALHO E IDENTIDADE (LOGO)
+   ========================================== */
+.hotbar {
+    background-color: #F3ECE0;
+}
+
+.logo {
     margin: 5px;
     padding: 10px;
     font-size: 45px;
     font-weight: bold;
     text-decoration: none;
     color: rgb(0, 0, 0);
+    display: inline-block; /* Mantém a proporção exata de bloco */
 }
 
-nav{
+/* ==========================================
+   3. MENUS DE NAVEGAÇÃO
+   ========================================== */
+nav {
     display: flex;
     justify-content: space-between;
     align-content: center;
 }
 
-ul{
+ul {
     margin: 10px;
     padding: 15px;
     display: flex;
@@ -70,63 +47,96 @@ ul{
     list-style: none;
 }
 
-.navegacao{
-    a{
-        text-decoration: none;
-        color: rgb(255, 140, 0);
-    }
-
-    ul{
-        margin: auto;
-    }
+.navegacao a {
+    text-decoration: none;
+    color: rgb(255, 140, 0);
 }
 
-.secao-1{
+.navegacao ul {
+    margin: auto;
+}
+
+/* ==========================================
+   4. SEÇÃO PRINCIPAL (SLOGAN E BANNER)
+   ========================================== */
+.secao-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
 }
 
-.secao-1 .slogan{
+.secao-1 .slogan {
     margin-top: 60px;
     margin-bottom: 15px;
     font-size: 20px;
 }
 
-.secao-1 h1{
+.secao-1 h1 {
     margin-bottom: 40px;
 }
 
-.secao-1 img{
+.secao-1 img {
     width: 700px;
     max-width: 90%;
     border-radius: 15px;
 }
 
-.secao-2{
+/* ==========================================
+   5. SEÇÃO SECUNDÁRIA (CATÁLOGO DE PRODUTOS)
+   ========================================== */
+.secao-2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
+    padding: 20px;
 }
 
-.secao-2 .slogan{
-    margin-top: 60px;
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
-.secao-2 h2{
+.secao-2 h2 {
+    margin-top: 25px;
+    font-size: 35px;
     margin-bottom: 40px;
 }
 
-.secao-2 img{
-    width: 200px;
-    max-width: 90%;
-    padding: 25px;
-    border-radius: 45px;
+.catalogo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
 }
 
+.catalogo-container a {
+    text-decoration: none;
+    color: rgb(255, 140, 0);
+}
+
+.secao-2 img {
+    width: 280px;
+    max-width: 90%;
+    height: auto;
+    padding: 5px;
+    border-radius: 45px;
+    object-fit: cover;
+}
+
+/* Alterado de seletor por ID (#aba-roupas) para Classe (.aba-roupas) */
+.aba-roupas {
+    padding-left: 5px;
+    padding-top: 15px;
+    background-color: rgb(226, 209, 181);
+    border-radius: 20px;
+}
+
+.aba-roupas p {
+    padding-bottom: 15px;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+}
+
+hr {
+    width: 100%;
+    border: 1px solid #000;
+    margin-bottom: 30px;
+}

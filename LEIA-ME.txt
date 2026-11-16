@@ -1,0 +1,46 @@
+# Integração da página de produto - Lart's
+
+## Arquivos incluídos
+
+- `produto.html`: página que mostra os detalhes do produto.
+- `produto.css`: estilos da página de detalhes e dos cartões de favoritos.
+- `produtos.js`: cadastro dos produtos, abertura dos detalhes, favoritos e carrinho simples.
+- `index.html`: cópia da página inicial com a inclusão do JavaScript.
+- `aba-favoritos.html`: cópia da página de favoritos adaptada para listar os itens salvos.
+
+## Como instalar no projeto
+
+1. Faça uma cópia de segurança do seu projeto.
+2. Copie `produto.html`, `produto.css` e `produtos.js` para a mesma pasta onde está o `index.html`.
+3. Substitua o `index.html` atual pelo `index.html` desta pasta (ou copie apenas a linha `<script src="produtos.js"></script>` antes de `</body>`).
+4. Substitua `aba-favoritos.html` pelo arquivo desta pasta.
+5. Mantenha a pasta `imagens` original do seu projeto. O código usa os caminhos de imagem que já existem nela.
+6. Abra `index.html` no navegador e clique em uma imagem de roupa do catálogo. A página de detalhes deve abrir.
+
+## Como personalizar produtos
+
+Abra `produtos.js` e procure a constante `PRODUTOS`, no começo do arquivo. Cada objeto representa um produto:
+
+- `id`: identificador único, não repita.
+- `nome`: nome que aparece na página.
+- `categoria`: categoria da roupa.
+- `imagem`: caminho da imagem que já existe na pasta `imagens`.
+- `preco`: preço, escrito com vírgula, por exemplo `"89,90"`.
+- `descricao`: texto da descrição.
+- `tamanhos`: lista dos tamanhos disponíveis.
+
+Os preços e descrições inseridos são apenas exemplos para demonstrar a página. Altere-os para os dados reais da loja. Para cadastrar outro produto, copie um objeto e troque os campos.
+
+## Como funciona
+
+- Na página inicial, o JavaScript identifica as imagens de roupas cadastradas e permite clicar nelas para abrir `produto.html?id=...`.
+- O mesmo arquivo `produto.html` é reutilizado para todos os produtos; o parâmetro `id` define qual produto aparece.
+- O botão de favoritos salva e remove produtos no `localStorage` do navegador.
+- A página `aba-favoritos.html` lê esses dados e monta os cartões dos produtos salvos.
+- O botão de carrinho salva o produto e o tamanho escolhido no `localStorage`. O arquivo atual `aba-carrinho.html` ainda não foi adaptado para exibir esses itens; esta integração apenas registra a seleção.
+
+## Observações
+
+- Os favoritos e o carrinho ficam salvos no navegador e não são compartilhados entre dispositivos ou navegadores.
+- As páginas de categoria do ZIP (`aba-vestidos.html`, `aba-camisasMas.html` e `aba-conjuntosFem.html`) ainda estão vazias. A integração de clique foi feita para as imagens que já aparecem no catálogo da página inicial.
+- Se futuramente você criar listas de produtos dentro das páginas de categoria, poderá usar links no formato `produto.html?id=vestido-1`, usando o `id` correspondente cadastrado em `produtos.js`.

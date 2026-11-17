@@ -1,42 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Ícone da aba do navegador (Favicon) -->
-    <link rel="shortcut icon" href="imagens/Pictogrammers-Material-Alphabet-Alpha-l-circle-outline.24.png" type="image/x-icon">
-    
-    <link rel="stylesheet" href="style.css">
-   <title>Lart's Rygussa</title>
-</head>
-<body>
-    <header>
-        <nav class="hotbar">
-            <a class="logo" href="index.html">Lart's</a>
-
-            <!-- Ícones utilitários da barra superior -->
-            <ul>
-                <li>
-                    <a href="#">
-                        <img src="imagens/icons/lupa/Iconsmind-Outline-Magnifi-Glass-2-2.32.png" alt="Painel de Pesquisa">
-                    </a>
-                </li>
-                <li>
-                    <a href="aba-carrinho.html">
-                        <img src="imagens/icons/bolsa/Ionic-Ionicons-Bag-handle-outline.32.png" alt="Aba Carrinho">
-                    </a>
-                </li>
-                <li>
-                    <a href="aba-favoritos.html">
-                        <img src="imagens/icons/user/Custom-Icon-Design-Silky-Line-User-User-2.32.png" alt="Aba de conta do user">
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        
-    </section>
-</body>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Meu carrinho | Lart’s
+        </title>
+        <link rel="stylesheet" href="./carrinho.css">
+        <script src="produtos.js" defer>
+        </script>
+        <script src="./carrinho.js" defer>
+        </script>
+    </head>
+    <body>
+        <a class="pular-conteudo" href="#conteudo">
+            Pular para o conteúdo
+        </a>
+        <header class="loja-cabecalho">
+            <a class="loja-cabecalho__marca" href="index.html">
+                Lart’s
+            </a>
+            <nav class="loja-cabecalho__nav" aria-label="Navegação principal">
+                <a href="index.html">
+                    Início
+                </a>
+                <a href="index.html#catalogo">
+                    Catálogo
+                </a>
+                <a href="aba-favoritos.html">
+                    Favoritos
+                </a>
+                <a href="aba-carrinho.html">
+                    Carrinho
+                </a>
+            </nav>
+        </header>
+        <main class="compra" id="conteudo">
+            <p class="compra__etapa">
+                SUA SELEÇÃO
+            </p>
+            <h1>
+                Meu carrinho
+            </h1>
+            <p id="mensagem" class="compra__mensagem" role="status" aria-live="polite">
+            </p>
+            <div id="pagina-carrinho">
+                <div class="compra__layout">
+                    <section aria-label="Produtos do carrinho" id="itens-carrinho" class="carrinho">
+                    </section>
+                    <aside class="resumo" aria-labelledby="titulo-resumo">
+                        <h2 id="titulo-resumo">
+                            Resumo da compra
+                        </h2>
+                        <div id="resumo-valores">
+                        </div>
+                        <a id="avancar" class="botao botao--principal" href="finalizacao.html">
+                            Continuar para finalização
+                        </a>
+                        <a class="resumo__voltar" href="index.html#catalogo">
+                            Continuar comprando
+                        </a>
+                    </aside>
+                </div>
+            </div>
+        </main>
+        <footer class="loja-rodape">
+            Lart’s — Moda que expressa quem você é.
+        </footer>
+    </body>
 </html>

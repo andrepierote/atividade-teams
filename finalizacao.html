@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Finalizar pedido | Lart’s
+        </title>
+        <link rel="stylesheet" href="./carrinho.css">
+        <script src="produtos.js" defer>
+        </script>
+        <script src="./carrinho.js" defer>
+        </script>
+    </head>
+    <body>
+        <a class="pular-conteudo" href="#conteudo">
+            Pular para o conteúdo
+        </a>
+        <header class="loja-cabecalho">
+            <a class="loja-cabecalho__marca" href="index.html">
+                Lart’s
+            </a>
+            <nav class="loja-cabecalho__nav" aria-label="Navegação principal">
+                <a href="index.html">
+                    Início
+                </a>
+                <a href="index.html#catalogo">
+                    Catálogo
+                </a>
+                <a href="aba-favoritos.html">
+                    Favoritos
+                </a>
+                <a href="aba-carrinho.html">
+                    Carrinho
+                </a>
+            </nav>
+        </header>
+        <main class="compra" id="conteudo">
+            <p class="compra__etapa">
+                SUA SELEÇÃO
+            </p>
+            <h1>
+                Finalizar pedido
+            </h1>
+            <p id="mensagem" class="compra__mensagem" role="status" aria-live="polite">
+            </p>
+            <div id="pagina-finalizacao">
+                <p class="compra__intro">
+                    Preencha seus dados e confira os itens. Pedido demonstrativo salvo neste navegador, com frete gratuito e sem cobrança.
+                </p>
+                <div class="compra__layout">
+                    <form id="formulario-pedido" class="formulario">
+                        <h2>
+                            Dados de contato e entrega
+                        </h2>
+                        <p>
+                            Todos os campos são obrigatórios, exceto complemento.
+                        </p>
+                        <div class="formulario__grade">
+                            <div class="formulario__campo">
+                                <label for="nome">
+                                    Nome completo
+                                </label>
+                                <input id="nome" name="nome" type="text" autocomplete="name" maxlength="120" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="email">
+                                    E-mail
+                                </label>
+                                <input id="email" name="email" type="email" autocomplete="email" maxlength="120" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="telefone">
+                                    Telefone com DDD
+                                </label>
+                                <input id="telefone" name="telefone" type="tel" autocomplete="tel" maxlength="120" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="cep">
+                                    CEP
+                                </label>
+                                <input id="cep" name="cep" type="text" autocomplete="postal-code" maxlength="120" required inputmode="numeric">
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="logradouro">
+                                    Rua ou avenida
+                                </label>
+                                <input id="logradouro" name="logradouro" type="text" autocomplete="address-line1" maxlength="120" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="numero">
+                                    Número ou S/N
+                                </label>
+                                <input id="numero" name="numero" type="text" autocomplete="off" maxlength="120" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="complemento">
+                                    Complemento (opcional)
+                                </label>
+                                <input id="complemento" name="complemento" type="text" autocomplete="address-line2" maxlength="120" >
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="bairro">
+                                    Bairro
+                                </label>
+                                <input id="bairro" name="bairro" type="text" autocomplete="off" maxlength="120" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="cidade">
+                                    Cidade
+                                </label>
+                                <input id="cidade" name="cidade" type="text" autocomplete="address-level2" maxlength="120" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="estado">
+                                    Estado
+                                </label>
+                                <select id="estado" name="estado" autocomplete="address-level1" required>
+                                    <option value="">
+                                        Selecione
+                                    </option>
+                                    <option>
+                                        AC
+                                    </option>
+                                    <option>
+                                        AL
+                                    </option>
+                                    <option>
+                                        AP
+                                    </option>
+                                    <option>
+                                        AM
+                                    </option>
+                                    <option>
+                                        BA
+                                    </option>
+                                    <option>
+                                        CE
+                                    </option>
+                                    <option>
+                                        DF
+                                    </option>
+                                    <option>
+                                        ES
+                                    </option>
+                                    <option>
+                                        GO
+                                    </option>
+                                    <option>
+                                        MA
+                                    </option>
+                                    <option>
+                                        MT
+                                    </option>
+                                    <option>
+                                        MS
+                                    </option>
+                                    <option>
+                                        MG
+                                    </option>
+                                    <option>
+                                        PA
+                                    </option>
+                                    <option>
+                                        PB
+                                    </option>
+                                    <option>
+                                        PR
+                                    </option>
+                                    <option>
+                                        PE
+                                    </option>
+                                    <option>
+                                        PI
+                                    </option>
+                                    <option>
+                                        RJ
+                                    </option>
+                                    <option>
+                                        RN
+                                    </option>
+                                    <option>
+                                        RS
+                                    </option>
+                                    <option>
+                                        RO
+                                    </option>
+                                    <option>
+                                        RR
+                                    </option>
+                                    <option>
+                                        SC
+                                    </option>
+                                    <option>
+                                        SP
+                                    </option>
+                                    <option>
+                                        SE
+                                    </option>
+                                    <option>
+                                        TO
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="botao botao--principal" type="submit" id="confirmar-pedido">
+                            Confirmar pedido demonstrativo
+                        </button>
+                    </form>
+                    <aside class="resumo">
+                        <h2>
+                            Confira seu pedido
+                        </h2>
+                        <div id="itens-resumo">
+                        </div>
+                        <div id="resumo-valores">
+                        </div>
+                        <a class="resumo__voltar" href="aba-carrinho.html">
+                            Editar carrinho
+                        </a>
+                    </aside>
+                </div>
+            </div>
+            <section id="confirmacao" class="confirmacao" hidden aria-labelledby="titulo-confirmacao">
+            </section>
+        </main>
+        <footer class="loja-rodape">
+            Lart’s — Moda que expressa quem você é.
+        </footer>
+    </body>
+</html>

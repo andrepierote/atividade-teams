@@ -140,3 +140,7 @@ hr {
     border: 1px solid #000;
     margin-bottom: 30px;
 }
+.rodape{
+    text-align: center;
+    color: orange;
+}

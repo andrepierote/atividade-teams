@@ -361,9 +361,9 @@ function prepararFavoritos() {
 // Na página inicial, transforma as imagens de roupas em links para o detalhe.
 // Assim não é necessário alterar manualmente cada imagem do catálogo.
 function ativarLinksDaPaginaInicial() {
-    if (!document.querySelector(".catalogo-container")) return;
+    if (!document.querySelector(".produto-card__figura")) return;
 
-    document.querySelectorAll(".catalogo-container img").forEach(imagem => {
+    document.querySelectorAll(".produto-card__figura img").forEach(imagem => {
         const nomeArquivo = imagem.getAttribute("src").split("/").pop();
         const produto = PRODUTOS.find(item => item.imagem.endsWith("/" + nomeArquivo));
 

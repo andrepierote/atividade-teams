@@ -7,7 +7,162 @@
     <!-- Ícone da aba do navegador (Favicon) -->
     <link rel="shortcut icon" href="imagens/Pictogrammers-Material-Alphabet-Alpha-l-circle-outline.24.png" type="image/x-icon">
     
-    
+    <style>
+
+/* =====================================
+   CATÁLOGO
+===================================== */
+
+.catalogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 30px 5%;
+}
+
+.catalogo__titulo {
+    margin: 25px 0;
+    font-size: 35px;
+    text-align: center;
+}
+
+.catalogo__divisor {
+    width: 100%;
+    border: 1px solid #000;
+    margin-bottom: 45px;
+}
+
+
+/* =====================================
+   CATEGORIAS
+===================================== */
+
+.catalogo__secao {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.catalogo__cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.catalogo__categoria-titulo {
+    font-size: 28px;
+    color: #000;
+}
+
+
+/* =====================================
+   LINK VER MAIS
+===================================== */
+
+.catalogo__ver-mais {
+    padding: 10px 15px;
+    border: 1px solid rgb(255, 140, 0);
+    border-radius: 5px;
+
+    color: rgb(255, 140, 0);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.catalogo__ver-mais:hover {
+    background-color: rgb(255, 140, 0);
+    color: white;
+}
+
+
+/* =====================================
+   PRODUTOS
+===================================== */
+
+.catalogo__produtos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.produto-card {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #f5eee3;
+}
+
+.produto-card__figura {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.produto-card__imagem {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.produto-card__imagem:hover {
+    transform: scale(1.04);
+}
+
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media screen and (max-width: 768px) {
+
+    .catalogo__produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .produto-card__imagem {
+        height: 300px;
+    }
+
+    .catalogo__categoria-titulo {
+        font-size: 24px;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .catalogo {
+        padding: 20px 15px;
+    }
+
+    .catalogo__categoria-titulo {
+        font-size: 20px;
+    }
+
+    .catalogo__ver-mais {
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .catalogo__produtos {
+        gap: 10px;
+    }
+
+    .produto-card__imagem {
+        height: 220px;
+    }
+
+}
+
+    </style>
 
     <link rel="stylesheet" href="style.css">
     <title>Lart's Rygussa</title>
@@ -45,11 +200,9 @@
     <!-- Menu de Links Principais (Âncoras) -->
     <nav class="navegacao" aria-label="Navegação principal">
         <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#vestidos">Vestidos</a></li>
+            <li><a href="#conjuntos">Conjuntos</a></li>
+            <li><a href="#camisaMasculina">Camisas</a></li>
         </ul>
     </nav>
 
@@ -65,53 +218,157 @@
         </section>
 
         <!-- Seção 2: Galeria de Produtos (Catálogo Inicial) -->
-        <section class="secao-2">
-            <h2 id="catalogo">Catálogo Inicial</h2>
-            <hr>
+        <section class="secao-2" id="catalogo">
+            <h2 class="catalogo__titulo">Catálogo Inicial</h2>
+            <hr class="catalogo__divisor">
             
-            <!-- Grupo de imagens envelopado para ativar o alinhamento flexível -->
-            <div class="catalogo-container">
-                <p class="titulos-produtos">Vestidos</p>
-                <a href="aba-vestidos.html">
-                    <button class="ver-mais">VER MAIS</button>
-                </a>
-                <div class="aba-roupas">
-                        <img src="imagens/pag 2/vestido-fem1.jpg" alt="Produto do catálogo 1">
-                        <img src="imagens/pag 2/vestido-fem2.jpg" alt="">
-                        <img src="imagens/pag 2/pexels-eden-fc-620771246-26933560.jpg" alt="">
-                        <img src="imagens/pag 2/" alt="">
-                    </div>
+            <!--CATEGORIA: VESTIDOS -->
+        <section class="catalogo__secao" id="vestidos">
+                <header class="catalogo__cabecalho">
+                    <h3 class="catalogo__categoria-titulo">Vestidos</h3>
+                    <a href="aba-vestidos.html" class="catalogo__ver-mais">
+                        Ver mais  →
+                    </a>
+                </header>
 
-                <a href="aba-(aDecidir).html">
-                    <div class="aba-roupas">
-                        <p class="titulos-produtos">(A decidir)</p>
-                        <img src="imagens/pag 2/pexels-siarhei-nester-318033361-40293517.jpg" alt="Produto do catálogo 2">
-                    </div>
-                </a>
-                <a href="aba-conjuntosFem.html">
-                    <div class="aba-roupas">
-                        <p class="titulos-produtos">Conjuntos Femininos</p>
-                        <img src="imagens/pag 2/conjunto-fem1.jpg" alt="Produto do catálogo 3">
-                        <img src="imagens/pag 2/conjunto-fem2.jpg" alt="Produto do catálogo 3">
-                        <img src="imagens/pag 2/conjunto-fem3.jpg" alt="Produto do catálogo 3">
-                        <img src="imagens/pag 2/conjunto-fem4.jpg" alt="Produto do catálogo 3">
-                        <img src="imagens/pag 2/conjunto-fem5.jpg" alt="Produto do catálogo 3">
-                        <img src="imagens/pag 2/conjunto-fem6.jpg" alt="Produto do catálogo 3">
-                        <img src="imagens/pag 2/conjunto-fem7.jpg" alt="Produto do catálogo 3">
-                    </div>
-                </a>
-                <a href="aba-camisasMas.html">
-                    <div class="aba-roupas">
-                        <p class="titulos-produtos">Camisas Masculinas</p>
-                        <img src="imagens/pag 2/camisa-mas1.jpg" alt="Produto do catálogo 4">
-                        <img src="imagens/pag 2/camisa-mas2.jpg" alt="Produto do catálogo 4">
-                        <img src="imagens/pag 2/camisa-mas3.jpg" alt="Produto do catálogo 4">
-                        <img src="imagens/pag 2/camisa-mas4.jpg" alt="Produto do catálogo 4">
-                        <img src="imagens/pag 2/camisa-mas5.jpg" alt="Produto do catálogo 4">
-                    </div>
-                </a>
-            </div>
-        </section>
+        <div class="catalogo__produtos">
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem"
+                         src="imagens/pag 2/vestido-fem1.jpg"
+                         alt="Vestido feminino, modelo 1">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem"
+                         src="imagens/pag 2/vestido-fem2.jpg"
+                         alt="Vestido feminino, modelo 2">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem"
+                         src="imagens/pag 2/pexels-eden-fc-620771246-26933560.jpg"
+                         alt="Peça de vestuário feminino">
+                </figure>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- CATEGORIA: CONJUNTOS FEMININOS -->
+    <section class="catalogo__secao" id="conjuntos">
+
+        <header class="catalogo__cabecalho">
+            <h3 class="catalogo__categoria-titulo">Conjuntos Femininos</h3>
+
+            <a class="catalogo__ver-mais" href="aba-conjuntosFem.html">
+                Ver mais →
+            </a>
+        </header>
+
+        <div class="catalogo__produtos">
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem1.jpg" alt="Conjunto feminino, modelo 1">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem2.jpg" alt="Conjunto feminino, modelo 2">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem3.jpg" alt="Conjunto feminino, modelo 3">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem4.jpg" alt="Conjunto feminino, modelo 4">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem5.jpg" alt="Conjunto feminino, modelo 5">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem6.jpg" alt="Conjunto feminino, modelo 6">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem7.jpg" alt="Conjunto feminino, modelo 7">
+                </figure>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIA: CAMISAS MASCULINAS -->
+    <section class="catalogo__secao" id="camisaMasculina">
+
+        <header class="catalogo__cabecalho">
+            <h3 class="catalogo__categoria-titulo">Camisas Masculinas</h3>
+
+            <a class="catalogo__ver-mais" href="aba-camisasMas.html">
+                Ver mais →
+            </a>
+        </header>
+
+        <div class="catalogo__produtos">
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/camisa-mas1.jpg" alt="Camisa masculina, modelo 1">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/camisa-mas2.jpg" alt="Camisa masculina, modelo 2">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/camisa-mas3.jpg" alt="Camisa masculina, modelo 3">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/camisa-mas4.jpg" alt="Camisa masculina, modelo 4">
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/pag 2/camisa-mas5.jpg" alt="Camisa masculina, modelo 5">
+                </figure>
+            </article>
+
+        </div>
+
+    </section>
+
+</section>
 
         <!-- Seções Reservadas para Futuras Expansões (Manutenção) -->
         <section class="secao-3">
@@ -131,8 +388,9 @@
     <!-- ==========================================
          RODAPÉ DA PÁGINA (Footer)
          ========================================== -->
-    <footer>
-        <!-- Adicionar direitos autorais, links institucionais e contatos aqui -->
+    <footer class="rodape">
+        <p>Lart's - Moda que expressa quem você é.</p>
+        <p>&copy; 2026 Lart's. Todos os direitos reservados.</p>
     </footer>
 
     <script src="produtos.js"></script>

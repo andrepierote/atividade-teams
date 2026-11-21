@@ -32,10 +32,24 @@ const PRODUTOS = [
         ]
     },
     {
+        "id": "vestido-3",
+        "nome": "Vestido branco",
+        "categoria": "Vestidos",
+        "imagem": "imagens/pag 2/vestido-fem3-recorte.jpg",
+        "preco": "469,90",
+        "descricao": "Com uma tonalidade branca marcante, este vestido oferece um visual elegante e moderno. Seu comprimento midi e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
+        "tamanhos": [
+            "P",
+            "M",
+            "G",
+            "GG"
+        ]
+    },
+    {
         "id": "camisa-1",
         "nome": "Camisa polo branca",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/pag 2/camisa-mas1.jpg",
+        "imagem": "imagens/pag 2/camisa-mas1.png",
         "preco": "69,90",
         "descricao": "Uma camisa polo branca que combina elegância e simplicidade. Seu visual discreto permite diversas combinações, sendo ideal tanto para ocasiões casuais quanto para momentos que exigem um estilo mais alinhado.",
         "tamanhos": [

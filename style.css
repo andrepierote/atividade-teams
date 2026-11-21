@@ -112,34 +112,10 @@ ul {
     color: rgb(255, 140, 0);
 }
 
-.secao-2 img {
-    width: 280px;
-    max-width: 90%;
-    height: auto;
-    padding: 5px;
-    border-radius: 45px;
-    object-fit: cover;
-}
 
-/* Alterado de seletor por ID (#aba-roupas) para Classe (.aba-roupas) */
-.aba-roupas {
-    padding-left: 5px;
-    padding-top: 15px;
-    background-color: rgb(226, 209, 181);
-    border-radius: 20px;
-}
-
-.aba-roupas p {
-    padding-bottom: 15px;
-    font-size: 25px;
-    color: rgb(0, 0, 0);
-}
-
-hr {
-    width: 100%;
-    border: 1px solid #000;
-    margin-bottom: 30px;
-}
+/* =========================================
+   6. RODAPE DAS PÁGINAS
+   =====================================*/
 .rodape{
     text-align: center;
     color: orange;

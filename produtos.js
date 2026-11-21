@@ -5,10 +5,10 @@
 const PRODUTOS = [
     {
         "id": "vestido-1",
-        "nome": "Vestido longo branco.",
+        "nome": "Vestido alcinhas",
         "categoria": "Vestidos",
-        "imagem": "imagens/pag 2/vestido-fem1.jpg",
-        "preco": "89,90",
+        "imagem": "imagens/produto/vestido-1.jpg",
+        "preco": "384,90",
         "descricao": "Um vestido longo branco que combina delicadeza e elegância. Seu design sem mangas e caimento fluido proporciona um visual sofisticado, ideal para eventos especiais e ocasiões que pedem um look mais refinado.",
         "tamanhos": [
             "P",
@@ -19,10 +19,10 @@ const PRODUTOS = [
     },
     {
         "id": "vestido-2",
-        "nome": "Vestido vermelho",
+        "nome": "Vestido longo",
         "categoria": "Vestidos",
-        "imagem": "imagens/pag 2/vestido-fem2.jpg",
-        "preco": "99,90",
+        "imagem": "imagens/produto/vestido-2.jpg",
+        "preco": "595,90",
         "descricao": "Com uma tonalidade vermelha marcante, este vestido sem mangas oferece um visual elegante e moderno. Seu comprimento midi e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
         "tamanhos": [
             "P",
@@ -33,11 +33,53 @@ const PRODUTOS = [
     },
     {
         "id": "vestido-3",
-        "nome": "Vestido branco",
+        "nome": "Vestido frente único",
         "categoria": "Vestidos",
-        "imagem": "imagens/pag 2/vestido-fem3-recorte.jpg",
+        "imagem": "imagens/produto/vestido-3.jpg",
         "preco": "469,90",
-        "descricao": "Com uma tonalidade branca marcante, este vestido oferece um visual elegante e moderno. Seu comprimento midi e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
+        "descricao": "Com uma tonalidade creme marcante, este vestido oferece um visual elegante e moderno. Seu comprimento midi e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
+        "tamanhos": [
+            "P",
+            "M",
+            "G",
+            "GG"
+        ]
+    },
+    {
+        "id": "vestido-4",
+        "nome": "Vestido brilhoso",
+        "categoria": "Vestidos",
+        "imagem": "imagens/produto/vestido-4.jpg",
+        "preco": "469,90",
+        "descricao": "Com uma tonalidade similar ao lilás com tonalidade puxada para o fosco e briloso. Este vestido oferece um visual elegante e moderno. Seu comprimento midi e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
+        "tamanhos": [
+            "P",
+            "M",
+            "G",
+            "GG"
+        ]
+    },
+    {
+        "id": "vestido-5",
+        "nome": "Vestido curto",
+        "categoria": "Vestidos",
+        "imagem": "imagens/produto/vestido-5.jpg",
+        "preco": "349,90",
+        "descricao": "Com uma tonalidade rosa choque marcante, este vestido oferece um visual elegante e moderno. Seu comprimento mais curto e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
+        "tamanhos": [
+            "P",
+            "M",
+            "G",
+            "GG"
+        ]
+    },
+    {
+        "id": "vestido-6",
+        "nome": "Vestido longo",
+        "categoria": "Vestidos",
+        "imagem": "imagens/produto/vestido-6.jpg",
+        "preco": "485,90",
+        "descricao": "Com uma tonalidade puxada para o marrom com tom mais suavizado, este vestido oferece um visual elegante e moderno. Seu comprimento midi e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
         "tamanhos": [
             "P",
             "M",
@@ -47,10 +89,10 @@ const PRODUTOS = [
     },
     {
         "id": "camisa-1",
-        "nome": "Camisa polo branca",
+        "nome": "Camisa em linho",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/pag 2/camisa-mas1.png",
-        "preco": "69,90",
+        "imagem": "imagens/produto/camisa-1.png",
+        "preco": "186,90",
         "descricao": "Uma camisa polo branca que combina elegância e simplicidade. Seu visual discreto permite diversas combinações, sendo ideal tanto para ocasiões casuais quanto para momentos que exigem um estilo mais alinhado.",
         "tamanhos": [
             "P",
@@ -61,10 +103,10 @@ const PRODUTOS = [
     },
     {
         "id": "camisa-2",
-        "nome": "Camiseta básica bege clara",
+        "nome": "Camiseta Oversized",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/pag 2/camisa-mas2.jpg",
-        "preco": "74,90",
+        "imagem": "imagens/produto/camisa-2.jpg",
+        "preco": "145,50",
         "descricao": "Uma peça essencial para qualquer guarda-roupa masculino. Com design minimalista, mangas curtas e tonalidade neutra, oferece facilidade na hora de montar combinações modernas e confortáveis.",
         "tamanhos": [
             "P",
@@ -75,11 +117,11 @@ const PRODUTOS = [
     },
     {
         "id": "camisa-3",
-        "nome": "Camisa xadrez masculina",
+        "nome": "Camiseta Oversized",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/pag 2/camisa-mas3.jpg",
-        "preco": "79,90",
-        "descricao": "Com estampa xadrez em tons escuros e claros, esta camisa apresenta um estilo casual e urbano. É uma ótima alternativa para complementar o visual, podendo ser utilizada aberta ou fechada.",
+        "imagem": "imagens/produto/camisa-3.jpg",
+        "preco": "145,50",
+        "descricao": "Uma peça essencial para qualquer guarda-roupa masculino. Com design minimalista, mangas curtas e tonalidade neutra, oferece facilidade na hora de montar combinações modernas e confortáveis.",
         "tamanhos": [
             "P",
             "M",
@@ -89,10 +131,10 @@ const PRODUTOS = [
     },
     {
         "id": "camisa-4",
-        "nome": "Camiseta oversized cinza",
+        "nome": "Camisa em tecido",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/pag 2/camisa-mas4.jpg",
-        "preco": "79,90",
+        "imagem": "imagens/produto/camisa-4.jpg",
+        "preco": "276,85",
         "descricao": "Uma opção moderna para quem prefere um estilo descontraído. Com modelagem aparentemente mais ampla e estampa discreta na região do peito, combina facilmente com calças jeans, bermudas e outros itens casuais.",
         "tamanhos": [
             "P",
@@ -103,11 +145,25 @@ const PRODUTOS = [
     },
     {
         "id": "camisa-5",
-        "nome": "Camiseta branca estampada",
+        "nome": "Camisa Jeans",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/pag 2/camisa-mas5.jpg",
-        "preco": "84,90",
-        "descricao": "Uma camiseta branca com detalhe gráfico discreto na parte frontal. Seu design simples e contemporâneo permite criar combinações versáteis, sendo ideal para quem valoriza conforto e estilo no cotidiano.",
+        "imagem": "imagens/produto/camisa-5.jpg",
+        "preco": "276,85",
+        "descricao": "Uma camiseta feita com tecido jeans. Seu design simples e contemporâneo permite criar combinações versáteis, sendo ideal para quem valoriza conforto e estilo no cotidiano.",
+        "tamanhos": [
+            "P",
+            "M",
+            "G",
+            "GG"
+        ]
+    },
+    {
+        "id": "camisa-6",
+        "nome": "Camiseta em tricô",
+        "categoria": "Camisas Masculinas",
+        "imagem": "imagens/produto/camisa-6.jpg",
+        "preco": "267,99",
+        "descricao": "Uma camiseta custurada em tricô. Seu design simples e contemporâneo permite criar combinações versáteis, sendo ideal para quem valoriza conforto e estilo no cotidiano.",
         "tamanhos": [
             "P",
             "M",
@@ -119,8 +175,8 @@ const PRODUTOS = [
         "id": "conjunto-1",
         "nome": "Conjunto vinho elegante",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/pag 2/conjunto-fem1.jpg",
-        "preco": "119,90",
+        "imagem": "imagens/produto/conjunto-1.jpg",
+        "preco": "319,90",
         "descricao": "Um conjunto em tom vinho que transmite sofisticação e personalidade. Com uma proposta moderna e elegante, é ideal para quem deseja um visual marcante sem abrir mão da praticidade.",
         "tamanhos": [
             "P",
@@ -131,11 +187,11 @@ const PRODUTOS = [
     },
     {
         "id": "conjunto-2",
-        "nome": "Conjunto cinza e bege",
+        "nome": "Conjunto com capa",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/pag 2/conjunto-fem2.jpg",
-        "preco": "129,90",
-        "descricao": "A combinação do cinza com o bege cria um visual discreto e contemporâneo. A parte superior ajustada contrasta com a calça de cintura alta, proporcionando uma composição versátil para o dia a dia.",
+        "imagem": "imagens/produto/conjunto-2.jpg",
+        "preco": "267,90",
+        "descricao": "Um conjunto em tom alaranjado que transmite sofisticação e personalidade. Com uma proposta moderna e elegante, é ideal para quem deseja um visual marcante sem abrir mão da praticidade..",
         "tamanhos": [
             "P",
             "M",
@@ -145,10 +201,10 @@ const PRODUTOS = [
     },
     {
         "id": "conjunto-3",
-        "nome": "Conjunto branco delicado",
+        "nome": "Conjunto manga longa",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/pag 2/conjunto-fem3.jpg",
-        "preco": "119,90",
+        "imagem": "imagens/produto/conjunto-3.jpg",
+        "preco": "315,00",
         "descricao": "Um conjunto branco que valoriza a simplicidade e a elegância. Sua composição proporciona um visual leve e harmonioso, perfeito para passeios, viagens e ocasiões durante o dia.",
         "tamanhos": [
             "P",
@@ -159,11 +215,11 @@ const PRODUTOS = [
     },
     {
         "id": "conjunto-4",
-        "nome": "Conjunto casual cinza e bege",
+        "nome": "Conjunto casual",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/pag 2/conjunto-fem4.jpg",
-        "preco": "139,90",
-        "descricao": "Ideal para quem procura conforto e estilo em uma única combinação. A blusa cinza acompanhada da calça bege cria uma composição neutra, moderna e fácil de combinar com diferentes acessórios.",
+        "imagem": "imagens/produto/conjunto-4.jpg",
+        "preco": "187,60",
+        "descricao": "Ideal para quem procura conforto e estilo em uma única combinação. A blusa creme acompanhada da saia marrom cria uma composição complementar, moderna e fácil de combinar com diferentes acessórios.",
         "tamanhos": [
             "P",
             "M",
@@ -173,9 +229,9 @@ const PRODUTOS = [
     },
     {
         "id": "conjunto-5",
-        "nome": "Conjunto branco moderno",
+        "nome": "Conjunto calça e blusa",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/pag 2/conjunto-fem5.jpg",
+        "imagem": "imagens/produto/conjunto-5.jpg",
         "preco": "149,90",
         "descricao": "Uma combinação que destaca a elegância dos tons claros. A blusa sem mangas e a calça de modelagem ampla oferecem uma aparência sofisticada, sendo uma excelente opção para diferentes ocasiões.",
         "tamanhos": [
@@ -187,25 +243,11 @@ const PRODUTOS = [
     },
     {
         "id": "conjunto-6",
-        "nome": "Conjunto social vermelho",
+        "nome": "Conjunto Social",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/pag 2/conjunto-fem6.jpg",
-        "preco": "129,90",
+        "imagem": "imagens/produto/conjunto-6.jpg",
+        "preco": "484,75",
         "descricao": "Para quem gosta de transmitir confiança e personalidade, este conjunto vermelho é uma excelente escolha. Com blazer estruturado e calça combinando, oferece um visual elegante, moderno e cheio de presença.",
-        "tamanhos": [
-            "P",
-            "M",
-            "G",
-            "GG"
-        ]
-    },
-    {
-        "id": "conjunto-7",
-        "nome": "Conjunto vinho e preto",
-        "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/pag 2/conjunto-fem7.jpg",
-        "preco": "139,90",
-        "descricao": "Uma combinação de cores que transmite modernidade e atitude. A parte superior vinho acompanhada da peça inferior preta cria um visual descontraído e estiloso, ideal para momentos de lazer e passeios.",
         "tamanhos": [
             "P",
             "M",

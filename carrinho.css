@@ -46,6 +46,6 @@ h2 { font-size: 20px; margin-top: 0; }
 .formulario__campo input, .formulario__campo select { width: 100%; min-width: 0; padding: 10px; border: 1px solid #a49380; border-radius: 5px; background: white; }
 .confirmacao { max-width: 760px; padding: 30px; border: 1px solid #dfd3c1; border-radius: 12px; background: white; overflow-wrap: anywhere; }
 .loja-rodape { text-align: center; padding: 28px 5%; border-top: 1px solid #dfd3c1; color: #65584c; }
-@media screen and (min-width: 769px) { .resumo { position: sticky; top: 24px; } .loja-cabecalho__nav { justify-content: flex-end; } }
+@media screen and (min-width: 768px) { .resumo { position: sticky; top: 24px; } .loja-cabecalho__nav { justify-content: flex-end; } }
 @media screen and (max-width: 768px) { .compra__layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: "conteudo" "resumo"; } .loja-cabecalho { flex-direction: column; gap: 12px; } .loja-cabecalho__nav { justify-content: center; } .compra { margin-top: 28px; } }
 @media screen and (max-width: 480px) { .formulario__grade { grid-template-columns: minmax(0, 1fr); } .loja-cabecalho__nav { gap: 14px; font-size: 14px; } .carrinho__item { gap: 12px; padding: 14px; } .carrinho__imagem { width: 70px; height: 100px; } .carrinho__acoes { flex-direction: column; align-items: flex-start; gap: 4px; } .resumo, .formulario { padding: 18px; } }

@@ -90,13 +90,16 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
+    background-color: rgba(255, 228, 196, 0.244);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .produto-card {
     width: 100%;
     overflow: hidden;
     border-radius: 12px;
-    background-color:#D5BF98;
+    padding-bottom: 50px;
 }
 
 .produto-card__figura {
@@ -108,15 +111,23 @@
 .produto-card__imagem {
     display: block;
     width: 100%;
-    height: 380px;
+    height: 490px;
     object-fit: cover;
     transition: transform 0.3s;
+    border-radius: 10px;
 }
 
 .produto-card__imagem:hover {
-    transform: scale(1.04);
+    transform: scale(1.028);
 }
-
+.produto-card__divisor{
+    width: 100%;
+    border: 1px solid #000;
+    margin-top: 10px;
+}
+.produto-card__legenda{
+    font-size: 18px;
+}
 
 /* =====================================
    RESPONSIVIDADE
@@ -130,13 +141,15 @@
     }
 
     .produto-card__imagem {
-        height: 300px;
+        height: 390px;
     }
 
     .catalogo__categoria-titulo {
         font-size: 30px;
     }
-
+    .produto-card__legenda{
+        font-size: 24px;
+    }
 }
 
 
@@ -147,7 +160,7 @@
     }
 
     .catalogo__categoria-titulo {
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .catalogo__ver-mais {
@@ -160,9 +173,14 @@
     }
 
     .produto-card__imagem {
-        height: 150px;
+        height: 190px;
         
     }
+
+    .produto-card__legenda{
+        font-size: 15px;
+    }
+    
 }
 
     </style>
@@ -236,28 +254,75 @@
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem"
-                         src="imagens/pag 2/vestido-fem1.jpg"
-                         alt="Vestido feminino, modelo 1">
+                    <img class="produto-card__imagem" src="imagens/produto/vestido-1.jpg" alt="Vestido feminino, modelo 1">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Vestido alcinhas
+                        <br>
+                        R$ 384,90
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem"
-                         src="imagens/pag 2/vestido-fem2.jpg"
-                         alt="Vestido feminino, modelo 2">
+                    <img class="produto-card__imagem" src="imagens/produto/vestido-2.jpg" alt="Vestido feminino, modelo 2">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Vestido longo
+                        <br>
+                        R$ 595,90
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem"
-                         src="imagens/pag 2/vestido-fem3-recorte.jpg"
-                         alt="Vestido feminino modelo 3">
+                    <img class="produto-card__imagem" src="imagens/produto/vestido-3.jpg" alt="Vestido feminino modelo 3">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Vestido frente único
+                        <br>
+                        R$ 469,90
+                    </figcaption>
                 </figure>
             </article>
 
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/produto/vestido-4.jpg" alt="Vestido feminino, modelo 4">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Vestido brilhoso
+                        <br>
+                        R$ 469,90
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/produto/vestido-5.jpg" alt="Vestido feminino, modelo 5">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Vestido curto
+                        <br>
+                        R$ 349,90
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/produto/vestido-6.jpg" alt="Vestido feminino, modelo 6">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Vestido longo
+                        <br>
+                        R$ 485,90
+                    </figcaption>
+                </figure>
+            </article>
         </div>
 
     </section>
@@ -277,43 +342,75 @@
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem1.jpg" alt="Conjunto feminino, modelo 1">
+                    <img class="produto-card__imagem" src="imagens/produto/conjunto-1.jpg" alt="Conjunto feminino, modelo 1">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                            Conjunto Elegante
+                            <br>
+                            R$ 319,90
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem2.jpg" alt="Conjunto feminino, modelo 2">
+                    <img class="produto-card__imagem" src="imagens/produto/conjunto-2.jpg" alt="Conjunto feminino, modelo 2">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Conjunto com capa
+                        <br>
+                        R$ 267,90
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem3.jpg" alt="Conjunto feminino, modelo 3">
+                    <img class="produto-card__imagem" src="imagens/produto/conjunto-3.jpg" alt="Conjunto feminino, modelo 3">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Conjunto manga longa Liso
+                        <br>
+                        R$ 315,00
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem4.jpg" alt="Conjunto feminino, modelo 4">
+                    <img class="produto-card__imagem" src="imagens/produto/conjunto-4.jpg" alt="Conjunto feminino, modelo 4">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Conjunto Casual
+                        <br>
+                        R$ 187,60
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem5.jpg" alt="Conjunto feminino, modelo 5">
+                    <img class="produto-card__imagem" src="imagens/produto/conjunto-5.jpg" alt="Conjunto feminino, modelo 5">
+
+                    <hr class="produto-card__divisor">
+                    
+                    <figcaption class="produto-card__legenda">
+                        Conjunto calça e blusa
+                        <br>
+                        R$ 149,90
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem6.jpg" alt="Conjunto feminino, modelo 6">
-                </figure>
-            </article>
-
-            <article class="produto-card">
-                <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/conjunto-fem7.jpg" alt="Conjunto feminino, modelo 7">
+                    <img class="produto-card__imagem" src="imagens/produto/conjunto-6.jpg" alt="Conjunto feminino, modelo 6">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Conjunto Social
+                        <br>
+                        R$ 484,75
+                    </figcaption>
                 </figure>
             </article>
 
@@ -337,31 +434,73 @@
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/camisa-mas1.png" alt="Camisa masculina, modelo 1">
+                    <img class="produto-card__imagem" src="imagens/produto/camisa-1.png" alt="Camisa masculina, modelo 1">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Camisa em linho
+                        <br>
+                        R$ 186,90
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/camisa-mas2.jpg" alt="Camisa masculina, modelo 2">
+                    <img class="produto-card__imagem" src="imagens/produto/camisa-2.jpg" alt="Camisa masculina, modelo 2">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Camiseta Oversized
+                        <br>
+                        R$ 145,50
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/camisa-mas3.jpg" alt="Camisa masculina, modelo 3">
+                    <img class="produto-card__imagem" src="imagens/produto/camisa-3.jpg" alt="Camisa masculina, modelo 3">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Camiseta Oversized
+                        <br>
+                        R$ 145,50
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/camisa-mas4.jpg" alt="Camisa masculina, modelo 4">
+                    <img class="produto-card__imagem" src="imagens/produto/camisa-4.jpg" alt="Camisa masculina, modelo 4">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Camisa em tecido
+                        <br>
+                        R$ 276,85
+                    </figcaption>
                 </figure>
             </article>
 
             <article class="produto-card">
                 <figure class="produto-card__figura">
-                    <img class="produto-card__imagem" src="imagens/pag 2/camisa-mas5.jpg" alt="Camisa masculina, modelo 5">
+                    <img class="produto-card__imagem" src="imagens/produto/camisa-5.jpg" alt="Camisa masculina, modelo 5">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Camisa Jeans
+                        <br>
+                        R$ 276,85
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="produto-card">
+                <figure class="produto-card__figura">
+                    <img class="produto-card__imagem" src="imagens/produto/camisa-6.jpg" alt="Camisa masculina, modelo 6">
+                    <hr class="produto-card__divisor">
+                    <figcaption class="produto-card__legenda">
+                        Camiseta em tricô
+                        <br>
+                        R$ 267,99
+                    </figcaption>
                 </figure>
             </article>
 

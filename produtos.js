@@ -311,11 +311,30 @@ function atualizarBotaoFavorito(id) {
     botao.classList.toggle("favoritado", estaFavoritado);
 }
 
+function mostrarAvisoCarrinho(texto, erro = false) {
+    const aviso = document.getElementById("aviso-carrinho");
+    aviso.hidden = false;
+    aviso.classList.toggle("aviso-carrinho--erro", erro);
+    aviso.querySelector(".aviso-carrinho__icone").textContent = erro ? "!" : "✓";
+    document.getElementById("aviso-carrinho-link").hidden = erro;
+    const mensagem = document.getElementById("aviso-carrinho-texto");
+    mensagem.textContent = "";
+    requestAnimationFrame(() => {
+        mensagem.textContent = texto;
+    });
+}
+
 function adicionarCarrinho(id, tamanho) {
-    let carrinho = JSON.parse(localStorage.getItem("larts-carrinho") || "[]");
-    carrinho.push({ produtoId: id, tamanho: tamanho, quantidade: 1 });
-    localStorage.setItem("larts-carrinho", JSON.stringify(carrinho));
-    alert("Produto adicionado ao carrinho!");
+    try {
+        const carrinho = JSON.parse(localStorage.getItem("larts-carrinho") || "[]");
+        carrinho.push({ produtoId: id, tamanho: tamanho, quantidade: 1 });
+        localStorage.setItem("larts-carrinho", JSON.stringify(carrinho));
+    } catch {
+        mostrarAvisoCarrinho("Não foi possível salvar o item. Verifique o armazenamento do navegador e tente novamente.", true);
+        return;
+    }
+    const produto = buscarProduto(id);
+    mostrarAvisoCarrinho(`${produto.nome} · tamanho ${tamanho}. Prontinho, está no carrinho!`);
 }
 
 function prepararPaginaProduto() {
@@ -390,6 +409,11 @@ function prepararPaginaProduto() {
     });
 
     atualizarBotaoFavorito(produto.id);
+
+    document.getElementById("fechar-aviso-carrinho").addEventListener("click", () => {
+        document.getElementById("aviso-carrinho").hidden = true;
+        document.getElementById("botao-carrinho").focus();
+    });
 }
 
 function prepararFavoritos() {

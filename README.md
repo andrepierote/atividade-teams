@@ -264,7 +264,3 @@ Localmente:
    bash git clone https://github.com cd atividade-teams    
 2. Abra a pasta no Visual Studio Code e execute o index.html com a extensão Live Server (ou abra o arquivo diretamente no navegador).
 © 2026 Lart's Rygussa — Moda que expressa quem você é.
-
-<FollowUp>
-Se você quiser ajustar algum detalhe técnico específico sobre o **banco de dados** que o Henrique Abreu implementou (como o nome do banco ou tecnologia usada, ex: Firebase, Supabase, MySQL, etc.) na seção **💾 Banco de dados e persistência**, me diga qual foi para eu atualizar aquela parte exata!
-</FollowUp>

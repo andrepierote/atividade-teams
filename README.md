@@ -1,6 +1,3 @@
-Aqui está o README.md completo e definitivo, escrito diretamente em código Markdown para você copiar e colar sem resumos.
-Ele une o visual centralizado com badges e rigor técnico do primeiro modelo (Substack ML) com a organização didática, sumário, diagrama de fluxo e tabelas detalhadas de BEM, Flexbox, Grid e Media Queries do segundo modelo (MasterCine), incluindo os 5 integrantes da sua equipe e a implementação do banco de dados.
-markdown
 <div align="center">
 
 # 🛍️ Lart's Rygussa — E-commerce de Moda

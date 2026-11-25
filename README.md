@@ -246,10 +246,25 @@ carrinho.css	min-width: 768px · max-width: 768px · max-width: 480px	Resumo fin
 Outros cuidados aplicados: <meta name="viewport"> em todas as páginas, tipografia fluida com clamp(), object-fit: cover nas fotografias e max-width: 100%.
 
 🖼️ Capturas de tela
+<br>
 
+Computador (1366 px)
+<img width="1920" height="1080" alt="Captura de tela 2026-11-25 162309" src="https://github.com/user-attachments/assets/f24c0686-e2a4-487f-989d-a0f2df1231ad" />
+<img width="1920" height="1080" alt="Captura de tela 2026-11-25 162247" src="https://github.com/user-attachments/assets/3daa8645-2a49-48fa-a750-89c03250a6d4" />
+<br>
+<br>
 
-Computador (1366 px)	Tablet (768 px)	Celular (375 px)		
+Tablet (768 px)	
+<img width="1852" height="976" alt="Captura de tela 2026-11-25 162517" src="https://github.com/user-attachments/assets/31965a4d-a998-43bb-b216-33d49634721b" />
+<img width="1826" height="946" alt="Captura de tela 2026-11-25 162544" src="https://github.com/user-attachments/assets/d19c9ec0-5e11-48fc-9694-1d2cbc04d344" />
+<br>
+<br>
 
+Celular (376 px)		
+<img width="1843" height="942" alt="Captura de tela 2026-11-25 162608" src="https://github.com/user-attachments/assets/5b1cd347-277b-43cc-bfc4-de38d611989e" />
+<img width="1847" height="942" alt="Captura de tela 2026-11-25 162623" src="https://github.com/user-attachments/assets/c4ffad69-473e-4fe7-8c5d-3ed21bd154d3" />
+<br>
+<br>
 
 💾 Banco de dados e persistência (ponto extra)
 

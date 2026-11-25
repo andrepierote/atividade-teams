@@ -288,6 +288,14 @@
         paginaCarrinho.append(limpar);
     }
     if (formulario) {
+        const cidade = formulario.elements.cidade;
+        const avisoTimon = document.getElementById('aviso-timon');
+        cidade.addEventListener('change', () => {
+            const nomeCidade = cidade.value.trim().normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '').toLowerCase();
+            const ehTimon = /^timon(?:\s*[-/]\s*(?:ma|maranhao))?$/.test(nomeCidade);
+            if (ehTimon && !avisoTimon.open) avisoTimon.showModal();
+        });
         formulario.addEventListener('submit', finalizar);
         formulario.addEventListener('input', evento => evento.target.setCustomValidity(''));
     }

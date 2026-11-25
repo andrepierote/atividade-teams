@@ -120,6 +120,7 @@ atividade-teams/
 │   └── carrinho.css          # carrinho de compras, resumo sticky e formulário de finalização
 ├── js/
 │   ├── produtos.js           # catálogo de dados e renderização dinâmica do produto
+│   ├── favoritos.js          # lista, remoção e atualização dos favoritos
 │   └── carrinho.js           # lógica de adição, cálculo de valores e persistência
 ├── imagens/
 │   ├── icons/                # ícones utilitários (lupa, sacola, usuário)
@@ -254,6 +255,7 @@ Computador (1366 px)	Tablet (768 px)	Celular (375 px)
 
 Para proporcionar uma experiência realista e completa de e-commerce:
 • Catálogo dinâmico (produtos.js): centraliza os metadados das peças (nome, preço, categoria, descrição e imagem) para alimentar dinamicamente a página única de detalhes (produto.html).
+• Favoritos (favoritos.js + localStorage): permite salvar e remover produtos da lista de desejos, usando o catálogo centralizado em produtos.js.
 • Carrinho persistente (carrinho.js + localStorage): salva os itens adicionados, quantidades e cálculos de subtotal no armazenamento local do navegador, mantendo o estado mesmo após atualizar ou fechar a aba.
 • Integração com Banco de Dados: estruturação de persistência para armazenamento dos registros de produtos, clientes e pedidos realizados na loja.
 

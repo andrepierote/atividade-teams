@@ -85,7 +85,8 @@
         botaoRemover.className = "card-favorito__remover";
         botaoRemover.dataset.remover = produto.id;
         botaoRemover.setAttribute("aria-label", `Remover ${produto.nome} dos favoritos`);
-        botaoRemover.textContent = "♥ Remover dos favoritos";
+        botaoRemover.setAttribute("aria-pressed", "true");
+        botaoRemover.textContent = "♥";
 
         card.append(link, botaoRemover);
         return card;

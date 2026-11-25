@@ -269,18 +269,6 @@ function formatarPreco(preco) {
     return "R$ " + preco;
 }
 
-function criarCardProduto(produto) {
-    return `
-        <article class="card-favorito">
-            <a href="produto.html?id=${encodeURIComponent(produto.id)}" class="card-favorito__link">
-                <img class="card-favorito__imagem" src="${produto.imagem}" alt="${produto.nome}">
-                <h3 class="card-favorito__titulo">${produto.nome}</h3>
-                <p class="card-favorito__preco">${formatarPreco(produto.preco)}</p>
-            </a>
-        </article>
-    `;
-}
-
 function obterFavoritos() {
     return JSON.parse(localStorage.getItem("larts-favoritos") || "[]");
 }
@@ -416,28 +404,6 @@ function prepararPaginaProduto() {
     });
 }
 
-function prepararFavoritos() {
-    const area = document.getElementById("lista-favoritos");
-    if (!area) return;
-
-    const favoritos = obterFavoritos();
-    const produtosFavoritos = favoritos.map(buscarProduto).filter(Boolean);
-
-    if (produtosFavoritos.length === 0) {
-        area.innerHTML = `
-            <div class="favoritos-vazio">
-                <h2>♡</h2>
-                <h3>Sua lista está vazia!</h3>
-                <p>Você ainda não adicionou nenhum produto aos seus favoritos.</p>
-                <a href="index.html#catalogo">Voltar ao catálogo</a>
-            </div>
-        `;
-        return;
-    }
-
-    area.innerHTML = `<div class="grade-produtos">${produtosFavoritos.map(criarCardProduto).join("")}</div>`;
-}
-
 // Na página inicial, transforma as imagens de roupas em links para o detalhe.
 // Assim não é necessário alterar manualmente cada imagem do catálogo.
 function ativarLinksDaPaginaInicial() {
@@ -462,6 +428,5 @@ function ativarLinksDaPaginaInicial() {
 
 document.addEventListener("DOMContentLoaded", function() {
     prepararPaginaProduto();
-    prepararFavoritos();
     ativarLinksDaPaginaInicial();
 });

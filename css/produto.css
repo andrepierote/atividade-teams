@@ -10,7 +10,7 @@
     color: #17130f;
 }
 
-.voltar-catalogo {
+.produto-pagina__voltar {
     padding: 5px 10px;
     border: 1px solid #4b3928;
     border-radius: 5px;
@@ -21,7 +21,7 @@
     font-weight: 600;
 }
 
-.voltar-catalogo:hover{
+.produto-pagina__voltar:hover{
     background-color: #634a32f0;
 }
 
@@ -32,7 +32,7 @@
     align-items: start;
 }
 
-.produto-imagem-area {
+.produto-destaque__imagem-area {
     background: #e2d1b573;
     border-radius: 15px;
     padding: 10px;
@@ -42,7 +42,7 @@
     justify-content: center;
 }
 
-.produto-imagem-principal {
+.produto-destaque__imagem {
     display: block;
     width: 100%;
     max-height: 680px;
@@ -50,11 +50,11 @@
     border-radius: 12px;
 }
 
-.produto-resumo {
+.produto-destaque__resumo {
     padding: 22px 8px;
 }
 
-.produto-categoria {
+.produto-destaque__categoria {
     color: #a45d12;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -62,37 +62,37 @@
     margin-bottom: 12px;
 }
 
-.produto-resumo h1 {
+.produto-destaque__titulo {
     font-size: clamp(25px, 3vw, 36px);
     line-height: 1.2;
     margin-bottom: 18px;
 }
 
-.produto-preco {
+.produto-destaque__preco {
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 5px;
 }
 
-.produto-parcela {
+.produto-destaque__parcela {
     color: #71675b;
     font-size: 13px;
     margin-bottom: 32px;
 }
 
-.selecao-tamanho h2,
-.produto-informacoes h2 {
+.selecao-tamanho__titulo,
+.produto-informacoes__titulo {
     font-size: 19px;
     margin-bottom: 14px;
 }
 
-.tamanhos {
+.selecao-tamanho__opcoes {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.botao-tamanho {
+.selecao-tamanho__botao {
     min-width: 48px;
     padding: 12px 15px;
     border: 1px solid #b9a68b;
@@ -102,20 +102,19 @@
     font-weight: 600;
 }
 
-.botao-tamanho:hover,
-.botao-tamanho.selecionado {
+.selecao-tamanho__botao:hover,
+.selecao-tamanho__botao--selecionado {
     background: #e2d1b5;
     border-color: #9b570c;
 }
 
-.aviso-tamanho {
+.selecao-tamanho__aviso {
     margin: 12px 0 20px;
     color: #766b5f;
     font-size: 13px;
 }
 
-.botao-comprar,
-.botao-favorito {
+.produto-destaque__botao {
     width: 100%;
     padding: 15px;
     margin-top: 10px;
@@ -125,23 +124,23 @@
     font-weight: 700;
 }
 
-.botao-comprar {
+.produto-destaque__botao--comprar {
     background: #17130f;
     color: white;
     border: 1px solid #17130f;
 }
 
-.botao-comprar:hover {
+.produto-destaque__botao--comprar:hover {
     background: #4b3928;
 }
 
-.botao-favorito {
+.produto-destaque__botao--favorito {
     background: #fffaf2;
     border: 1px solid #b9a68b;
     color: #17130f;
 }
 
-.botao-favorito.favoritado {
+.produto-destaque__botao--favoritado {
     color: #a33a32;
     border-color: #a33a32;
 }
@@ -154,17 +153,17 @@
     line-height: 1.7;
 }
 
-.produto-informacoes h2:not(:first-child) {
+.produto-informacoes__titulo:not(:first-child) {
     margin-top: 24px;
 }
 
-.nota-edicao {
+.produto-informacoes__nota {
     margin-top: 20px;
     color: #766b5f;
     font-size: 13px;
 }
 
-.produto-nao-encontrado {
+.produto-pagina__nao-encontrado {
     padding: 60px 10px;
     text-align: center;
 }
@@ -178,48 +177,48 @@
     text-align: left;
 }
 
-.produto-card {
+.card-favorito {
     background: #e2d1b5;
     border-radius: 14px;
     padding: 10px;
     transition: transform .2s ease;
 }
 
-.produto-card:hover {
+.card-favorito:hover {
     transform: translateY(-4px);
 }
 
-.produto-card-link {
+.card-favorito__link {
     color: #17130f;
     text-decoration: none;
 }
 
-.produto-card img {
+.card-favorito__imagem {
     width: 100%;
     height: 260px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.produto-card h3 {
+.card-favorito__titulo {
     font-size: 16px;
     margin: 10px 4px 6px;
 }
 
-.produto-card p {
+.card-favorito__preco {
     margin: 0 4px 8px;
     font-weight: 700;
 }
 
-.link-imagem-produto {
+.produto-card__link-imagem {
     display: block;
 }
 
-.imagem-clicavel-produto {
+.produto-card__imagem--clicavel {
     cursor: pointer;
 }
 
-.imagem-clicavel-produto:hover {
+.produto-card__imagem--clicavel:hover {
     filter: brightness(.96);
 }
 
@@ -234,24 +233,24 @@
         gap: 12px;
     }
 
-    .produto-imagem-area {
+    .produto-destaque__imagem-area {
         min-height: 0;
         padding: 8px;
     }
 
-    .produto-imagem-principal {
+    .produto-destaque__imagem {
         max-height: 560px;
     }
 
-    .produto-resumo {
+    .produto-destaque__resumo {
         padding: 14px 4px;
     }
 
-    .produto-resumo h1 {
+    .produto-destaque__titulo {
         font-size: 27px;
     }
 
-    .produto-preco {
+    .produto-destaque__preco {
         font-size: 27px;
     }
 

@@ -7,7 +7,7 @@ const PRODUTOS = [
         "id": "vestido-1",
         "nome": "Vestido alcinhas",
         "categoria": "Vestidos",
-        "imagem": "imagens/produto/vestido-1.jpg",
+        "imagem": "../imagens/produto/vestido-1.jpg",
         "preco": "384,90",
         "descricao": "Um vestido longo branco que combina delicadeza e elegância. Seu design sem mangas e caimento fluido proporciona um visual sofisticado, ideal para eventos especiais e ocasiões que pedem um look mais refinado.",
         "tamanhos": [
@@ -21,7 +21,7 @@ const PRODUTOS = [
         "id": "vestido-2",
         "nome": "Vestido longo",
         "categoria": "Vestidos",
-        "imagem": "imagens/produto/vestido-2.jpg",
+        "imagem": "../imagens/produto/vestido-2.jpg",
         "preco": "595,90",
         "descricao": "Com uma tonalidade vermelha marcante, este vestido sem mangas oferece um visual elegante e moderno. Seu comprimento midi e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
         "tamanhos": [
@@ -35,7 +35,7 @@ const PRODUTOS = [
         "id": "vestido-3",
         "nome": "Vestido frente único",
         "categoria": "Vestidos",
-        "imagem": "imagens/produto/vestido-3.jpg",
+        "imagem": "../imagens/produto/vestido-3.jpg",
         "preco": "469,90",
         "descricao": "Com uma tonalidade creme marcante, este vestido oferece um visual elegante e moderno. Seu comprimento midi e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
         "tamanhos": [
@@ -49,7 +49,7 @@ const PRODUTOS = [
         "id": "vestido-4",
         "nome": "Vestido brilhoso",
         "categoria": "Vestidos",
-        "imagem": "imagens/produto/vestido-4.jpg",
+        "imagem": "../imagens/produto/vestido-4.jpg",
         "preco": "469,90",
         "descricao": "Com uma tonalidade similar ao lilás com tonalidade puxada para o fosco e briloso. Este vestido oferece um visual elegante e moderno. Seu comprimento midi e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
         "tamanhos": [
@@ -63,7 +63,7 @@ const PRODUTOS = [
         "id": "vestido-5",
         "nome": "Vestido curto",
         "categoria": "Vestidos",
-        "imagem": "imagens/produto/vestido-5.jpg",
+        "imagem": "../imagens/produto/vestido-5.jpg",
         "preco": "349,90",
         "descricao": "Com uma tonalidade rosa choque marcante, este vestido oferece um visual elegante e moderno. Seu comprimento mais curto e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
         "tamanhos": [
@@ -77,7 +77,7 @@ const PRODUTOS = [
         "id": "vestido-6",
         "nome": "Vestido longo",
         "categoria": "Vestidos",
-        "imagem": "imagens/produto/vestido-6.jpg",
+        "imagem": "../imagens/produto/vestido-6.jpg",
         "preco": "485,90",
         "descricao": "Com uma tonalidade puxada para o marrom com tom mais suavizado, este vestido oferece um visual elegante e moderno. Seu comprimento midi e caimento delicado tornam a peça uma ótima escolha para passeios, encontros e eventos especiais.",
         "tamanhos": [
@@ -91,7 +91,7 @@ const PRODUTOS = [
         "id": "camisa-1",
         "nome": "Camisa em linho",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/produto/camisa-1.png",
+        "imagem": "../imagens/produto/camisa-1.png",
         "preco": "186,90",
         "descricao": "Uma camisa polo branca que combina elegância e simplicidade. Seu visual discreto permite diversas combinações, sendo ideal tanto para ocasiões casuais quanto para momentos que exigem um estilo mais alinhado.",
         "tamanhos": [
@@ -105,7 +105,7 @@ const PRODUTOS = [
         "id": "camisa-2",
         "nome": "Camiseta Oversized",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/produto/camisa-2.jpg",
+        "imagem": "../imagens/produto/camisa-2.jpg",
         "preco": "145,50",
         "descricao": "Uma peça essencial para qualquer guarda-roupa masculino. Com design minimalista, mangas curtas e tonalidade neutra, oferece facilidade na hora de montar combinações modernas e confortáveis.",
         "tamanhos": [
@@ -119,7 +119,7 @@ const PRODUTOS = [
         "id": "camisa-3",
         "nome": "Camiseta Oversized",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/produto/camisa-3.jpg",
+        "imagem": "../imagens/produto/camisa-3.jpg",
         "preco": "145,50",
         "descricao": "Uma peça essencial para qualquer guarda-roupa masculino. Com design minimalista, mangas curtas e tonalidade neutra, oferece facilidade na hora de montar combinações modernas e confortáveis.",
         "tamanhos": [
@@ -133,7 +133,7 @@ const PRODUTOS = [
         "id": "camisa-4",
         "nome": "Camisa em tecido",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/produto/camisa-4.jpg",
+        "imagem": "../imagens/produto/camisa-4.jpg",
         "preco": "276,85",
         "descricao": "Uma opção moderna para quem prefere um estilo descontraído. Com modelagem aparentemente mais ampla e estampa discreta na região do peito, combina facilmente com calças jeans, bermudas e outros itens casuais.",
         "tamanhos": [
@@ -147,7 +147,7 @@ const PRODUTOS = [
         "id": "camisa-5",
         "nome": "Camisa Jeans",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/produto/camisa-5.jpg",
+        "imagem": "../imagens/produto/camisa-5.jpg",
         "preco": "276,85",
         "descricao": "Uma camiseta feita com tecido jeans. Seu design simples e contemporâneo permite criar combinações versáteis, sendo ideal para quem valoriza conforto e estilo no cotidiano.",
         "tamanhos": [
@@ -161,7 +161,7 @@ const PRODUTOS = [
         "id": "camisa-6",
         "nome": "Camiseta em tricô",
         "categoria": "Camisas Masculinas",
-        "imagem": "imagens/produto/camisa-6.jpg",
+        "imagem": "../imagens/produto/camisa-6.jpg",
         "preco": "267,99",
         "descricao": "Uma camiseta custurada em tricô. Seu design simples e contemporâneo permite criar combinações versáteis, sendo ideal para quem valoriza conforto e estilo no cotidiano.",
         "tamanhos": [
@@ -175,7 +175,7 @@ const PRODUTOS = [
         "id": "conjunto-1",
         "nome": "Conjunto vinho elegante",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/produto/conjunto-1.jpg",
+        "imagem": "../imagens/produto/conjunto-1.jpg",
         "preco": "319,90",
         "descricao": "Um conjunto em tom vinho que transmite sofisticação e personalidade. Com uma proposta moderna e elegante, é ideal para quem deseja um visual marcante sem abrir mão da praticidade.",
         "tamanhos": [
@@ -189,7 +189,7 @@ const PRODUTOS = [
         "id": "conjunto-2",
         "nome": "Conjunto com capa",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/produto/conjunto-2.jpg",
+        "imagem": "../imagens/produto/conjunto-2.jpg",
         "preco": "267,90",
         "descricao": "Um conjunto em tom alaranjado que transmite sofisticação e personalidade. Com uma proposta moderna e elegante, é ideal para quem deseja um visual marcante sem abrir mão da praticidade..",
         "tamanhos": [
@@ -203,7 +203,7 @@ const PRODUTOS = [
         "id": "conjunto-3",
         "nome": "Conjunto manga longa",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/produto/conjunto-3.jpg",
+        "imagem": "../imagens/produto/conjunto-3.jpg",
         "preco": "315,00",
         "descricao": "Um conjunto branco que valoriza a simplicidade e a elegância. Sua composição proporciona um visual leve e harmonioso, perfeito para passeios, viagens e ocasiões durante o dia.",
         "tamanhos": [
@@ -217,7 +217,7 @@ const PRODUTOS = [
         "id": "conjunto-4",
         "nome": "Conjunto casual",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/produto/conjunto-4.jpg",
+        "imagem": "../imagens/produto/conjunto-4.jpg",
         "preco": "187,60",
         "descricao": "Ideal para quem procura conforto e estilo em uma única combinação. A blusa creme acompanhada da saia marrom cria uma composição complementar, moderna e fácil de combinar com diferentes acessórios.",
         "tamanhos": [
@@ -231,7 +231,7 @@ const PRODUTOS = [
         "id": "conjunto-5",
         "nome": "Conjunto calça e blusa",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/produto/conjunto-5.jpg",
+        "imagem": "../imagens/produto/conjunto-5.jpg",
         "preco": "149,90",
         "descricao": "Uma combinação que destaca a elegância dos tons claros. A blusa sem mangas e a calça de modelagem ampla oferecem uma aparência sofisticada, sendo uma excelente opção para diferentes ocasiões.",
         "tamanhos": [
@@ -245,7 +245,7 @@ const PRODUTOS = [
         "id": "conjunto-6",
         "nome": "Conjunto Social",
         "categoria": "Conjuntos Femininos",
-        "imagem": "imagens/produto/conjunto-6.jpg",
+        "imagem": "../imagens/produto/conjunto-6.jpg",
         "preco": "484,75",
         "descricao": "Para quem gosta de transmitir confiança e personalidade, este conjunto vermelho é uma excelente escolha. Com blazer estruturado e calça combinando, oferece um visual elegante, moderno e cheio de presença.",
         "tamanhos": [
@@ -271,11 +271,11 @@ function formatarPreco(preco) {
 
 function criarCardProduto(produto) {
     return `
-        <article class="produto-card">
-            <a href="produto.html?id=${encodeURIComponent(produto.id)}" class="produto-card-link">
-                <img src="${produto.imagem}" alt="${produto.nome}">
-                <h3>${produto.nome}</h3>
-                <p>${formatarPreco(produto.preco)}</p>
+        <article class="card-favorito">
+            <a href="produto.html?id=${encodeURIComponent(produto.id)}" class="card-favorito__link">
+                <img class="card-favorito__imagem" src="${produto.imagem}" alt="${produto.nome}">
+                <h3 class="card-favorito__titulo">${produto.nome}</h3>
+                <p class="card-favorito__preco">${formatarPreco(produto.preco)}</p>
             </a>
         </article>
     `;
@@ -308,7 +308,7 @@ function atualizarBotaoFavorito(id) {
 
     const estaFavoritado = obterFavoritos().includes(id);
     botao.textContent = estaFavoritado ? "♥ Remover dos favoritos" : "♡ Adicionar aos favoritos";
-    botao.classList.toggle("favoritado", estaFavoritado);
+    botao.classList.toggle("produto-destaque__botao--favoritado", estaFavoritado);
 }
 
 function mostrarAvisoCarrinho(texto, erro = false) {
@@ -346,51 +346,51 @@ function prepararPaginaProduto() {
     const produto = buscarProduto(id);
 
     if (!produto) {
-        area.innerHTML = '<p class="produto-nao-encontrado">Produto não encontrado. <a href="index.html#catalogo">Voltar ao catálogo</a>.</p>';
+        area.innerHTML = '<p class="produto-pagina__nao-encontrado">Produto não encontrado. <a href="index.html#catalogo">Voltar ao catálogo</a>.</p>';
         return;
     }
 
     document.title = produto.nome + " | Lart's";
     area.innerHTML = `
         <div class="produto-destaque">
-            <div class="produto-imagem-area">
-                <img class="produto-imagem-principal" src="${produto.imagem}" alt="${produto.nome}">
+            <div class="produto-destaque__imagem-area">
+                <img class="produto-destaque__imagem" src="${produto.imagem}" alt="${produto.nome}">
             </div>
 
-            <div class="produto-resumo">
-                <p class="produto-categoria">${produto.categoria}</p>
-                <h1>${produto.nome}</h1>
-                <p class="produto-preco">${formatarPreco(produto.preco)}</p>
-                <p class="produto-parcela">Preço ilustrativo: atualize conforme o valor real.</p>
+            <div class="produto-destaque__resumo">
+                <p class="produto-destaque__categoria">${produto.categoria}</p>
+                <h1 class="produto-destaque__titulo">${produto.nome}</h1>
+                <p class="produto-destaque__preco">${formatarPreco(produto.preco)}</p>
+                <p class="produto-destaque__parcela">Preço ilustrativo: atualize conforme o valor real.</p>
 
                 <div class="selecao-tamanho">
-                    <h2>Escolha o tamanho</h2>
-                    <div class="tamanhos">
-                        ${produto.tamanhos.map(tamanho => `<button type="button" class="botao-tamanho" data-tamanho="${tamanho}">${tamanho}</button>`).join("")}
+                    <h2 class="selecao-tamanho__titulo">Escolha o tamanho</h2>
+                    <div class="selecao-tamanho__opcoes">
+                        ${produto.tamanhos.map(tamanho => `<button type="button" class="selecao-tamanho__botao" data-tamanho="${tamanho}">${tamanho}</button>`).join("")}
                     </div>
-                    <p id="aviso-tamanho" class="aviso-tamanho">Selecione um tamanho antes de adicionar ao carrinho.</p>
+                    <p id="aviso-tamanho" class="selecao-tamanho__aviso">Selecione um tamanho antes de adicionar ao carrinho.</p>
                 </div>
 
-                <button type="button" id="botao-carrinho" class="botao-comprar">Adicionar ao carrinho</button>
-                <button type="button" id="botao-favorito" class="botao-favorito">♡ Adicionar aos favoritos</button>
+                <button type="button" id="botao-carrinho" class="produto-destaque__botao produto-destaque__botao--comprar">Adicionar ao carrinho</button>
+                <button type="button" id="botao-favorito" class="produto-destaque__botao produto-destaque__botao--favorito">♡ Adicionar aos favoritos</button>
             </div>
         </div>
 
         <section class="produto-informacoes">
-            <h2>Descrição do produto</h2>
+            <h2 class="produto-informacoes__titulo">Descrição do produto</h2>
             <p>${produto.descricao}</p>
-            <h2>Informações adicionais</h2>
+            <h2 class="produto-informacoes__titulo">Informações adicionais</h2>
             <p><strong>Categoria:</strong> ${produto.categoria}</p>
             <p><strong>Tamanhos disponíveis:</strong> ${produto.tamanhos.join(", ")}</p>
-            <p class="nota-edicao">Estas informações são exemplos. Edite os dados no arquivo <strong>produtos.js</strong>.</p>
+            <p class="produto-informacoes__nota">Estas informações são exemplos. Edite os dados no arquivo <strong>produtos.js</strong>.</p>
         </section>
     `;
 
     let tamanhoSelecionado = "";
-    document.querySelectorAll(".botao-tamanho").forEach(botao => {
+    document.querySelectorAll(".selecao-tamanho__botao").forEach(botao => {
         botao.addEventListener("click", function() {
-            document.querySelectorAll(".botao-tamanho").forEach(item => item.classList.remove("selecionado"));
-            this.classList.add("selecionado");
+            document.querySelectorAll(".selecao-tamanho__botao").forEach(item => item.classList.remove("selecao-tamanho__botao--selecionado"));
+            this.classList.add("selecao-tamanho__botao--selecionado");
             tamanhoSelecionado = this.dataset.tamanho;
             document.getElementById("aviso-tamanho").textContent = "Tamanho selecionado: " + tamanhoSelecionado;
         });
@@ -448,7 +448,7 @@ function ativarLinksDaPaginaInicial() {
         const produto = PRODUTOS.find(item => item.imagem.endsWith("/" + nomeArquivo));
 
         if (produto) {
-            imagem.classList.add("imagem-clicavel-produto");
+            imagem.classList.add("produto-card__imagem--clicavel");
             imagem.title = "Ver detalhes de " + produto.nome;
             imagem.addEventListener("click", function(event) {
                 // Impede que o clique também abra o link da categoria que envolve a imagem.

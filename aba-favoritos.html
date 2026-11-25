@@ -1,106 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="shortcut icon"
-        href="imagens/Pictogrammers-Material-Alphabet-Alpha-l-circle-outline.24.png"
-        type="image/x-icon">
-
+    <link rel="shortcut icon" href="imagens/Pictogrammers-Material-Alphabet-Alpha-l-circle-outline.24.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="produto.css">
-
-    <title>Lart's Rygussa</title>
-
-    <style>
-        .rodape{
-            position: absolute;
-            bottom: 0;/* Cola na borda inferior (0 pixels de distância do fundo) */
-            width: 100%;     /* Faz ocupar toda a largura da tela */
-            padding: 15px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="favoritos.css">
+    <title>Lart's Rygussa - Favoritos</title>
 </head>
-
 <body>
-
-    <!-- CABEÇALHO -->
     <header>
         <nav class="hotbar">
-
-            <a class="logo" href="index.html">Lart's</a>
-
-            <ul>
-                <li>
-                    <a href="#">
-                        <img src="imagens/icons/lupa/Iconsmind-Outline-Magnifi-Glass-2-2.32.png"
-                            alt="Pesquisar">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="aba-carrinho.html">
-                        <img src="imagens/icons/bolsa/Ionic-Ionicons-Bag-handle-outline.32.png"
-                            alt="Carrinho">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="aba-favoritos.html">
-                        <img src="imagens/icons/user/Custom-Icon-Design-Silky-Line-User-User-2.32.png"
-                            alt="Minha conta">
-                    </a>
-                </li>
+            <a class="hotbar__logo" href="index.html">Lart's</a>
+            <ul class="hotbar__lista">
+                <li><a href="#"><img src="imagens/icons/lupa/Iconsmind-Outline-Magnifi-Glass-2-2.32.png" alt="Pesquisar"></a></li>
+                <li><a href="aba-carrinho.html"><img src="imagens/icons/bolsa/Ionic-Ionicons-Bag-handle-outline.32.png" alt="Carrinho"></a></li>
+                <li><a href="aba-favoritos.html"><img src="imagens/icons/user/Custom-Icon-Design-Silky-Line-User-User-2.32.png" alt="Minha conta"></a></li>
             </ul>
-
         </nav>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
     <main>
+        <section class="favoritos">
+            <h1 class="favoritos__titulo">Meus Favoritos</h1>
+            <hr class="favoritos__divisor">
 
-        <section class="secao-2">
-
-            <h1>Meus Favoritos</h1>
-
-            <hr>
-
-            <div class="favoritos-vazio">
-
-                <h2>♡</h2>
-
+            <div class="favoritos__vazio">
+                <h2 class="favoritos__icone">♡</h2>
                 <h3>Sua lista está vazia!</h3>
-
-                <p>
-                    Você ainda não adicionou nenhum
-                    produto aos seus favoritos.
-                </p>
-
-                <a href="index.html#catalogo">
-                    Voltar ao catálogo
-                </a>
-
+                <p>Você ainda não adicionou nenhum produto aos seus favoritos.</p>
+                <a class="favoritos__link" href="index.html#catalogo">Voltar ao catálogo</a>
             </div>
-
         </section>
-
     </main>
 
-    <!-- RODAPÉ -->
     <footer class="rodape">
-
         <p>Lart's - Moda que expressa quem você é.</p>
-
-        <p>
-            &copy; 2026 Lart's.
-            Todos os direitos reservados.
-        </p>
-
+        <p>&copy; 2026 Lart's. Todos os direitos reservados.</p>
     </footer>
 
     <script src="produtos.js"></script>
 </body>
-
 </html>

@@ -1,122 +1,127 @@
-/* ==========================================
-   1. CONFIGURAÇÕES GLOBAIS / RESET
+/* ========================================== 
+   1. CONFIGURAÇÕES GLOBAIS E STICKY FOOTER
    ========================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-image: url("imagens/fundo_nav1.png");
-    /* Garante consistência de fonte padrão do seu navegador nas páginas do site */
-    font-family: inherit; 
+  background-image: url("imagens/fundo_nav1.png");
+  font-family: inherit;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ==========================================
-   2. CABEÇALHO E IDENTIDADE (LOGO)
+main {
+  flex: 1;
+}
+
+/* ========================================== 
+   2. BLOCO GLOBAL: CABEÇALHO (HOTBAR) 
    ========================================== */
 .hotbar {
-    background-color: #F3ECE0;
+  background-color: #F3ECE0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo {
-    margin: 5px;
-    padding: 10px;
-    font-size: 45px;
-    font-weight: bold;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    display: inline-block; /* Mantém a proporção exata de bloco */
+.hotbar__logo {
+  margin: 5px;
+  padding: 10px;
+  font-size: 45px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  display: inline-block;
 }
 
-/* ==========================================
-   3. MENUS DE NAVEGAÇÃO
+.hotbar__lista {
+  margin: 10px;
+  padding: 15px;
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+/* ========================================== 
+   3. BLOCO GLOBAL: MENU DE NAVEGAÇÃO 
    ========================================== */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
+.navegacao {
+  display: flex;
+  justify-content: center;
 }
 
-ul {
-    margin: 10px;
-    padding: 15px;
-    display: flex;
-    gap: 30px;
-    list-style: none;
+.navegacao__lista {
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  gap: 30px;
+  list-style: none;
 }
 
-.navegacao a {
-    text-decoration: none;
-    color: rgb(255, 140, 0);
+.navegacao__link {
+  text-decoration: none;
+  color: rgb(255, 140, 0);
 }
 
-.navegacao ul {
-    margin: auto;
-}
-
-/* ==========================================
-   4. SEÇÃO PRINCIPAL (SLOGAN E BANNER)
+/* ========================================== 
+   4. COMPONENTE REUTILIZÁVEL: CARD DE PRODUTO
    ========================================== */
-.secao-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.produto-card {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  padding-bottom: 50px;
 }
 
-.secao-1 .slogan {
-    margin-top: 60px;
-    margin-bottom: 15px;
-    font-size: 20px;
+.produto-card__figura {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
-.secao-1 h1 {
-    margin-bottom: 40px;
+.produto-card__imagem {
+  display: block;
+  width: 100%;
+  height: 490px;
+  object-fit: cover;
+  transition: transform 0.3s;
+  border-radius: 10px;
 }
 
-.secao-1 img {
-    width: 700px;
-    max-width: 90%;
-    border-radius: 15px;
+.produto-card__imagem:hover {
+  transform: scale(1.028);
 }
 
-/* ==========================================
-   5. SEÇÃO SECUNDÁRIA (CATÁLOGO DE PRODUTOS)
+.produto-card__divisor {
+  width: 100%;
+  border: 1px solid #000;
+  margin-top: 10px;
+}
+
+.produto-card__legenda {
+  font-size: 18px;
+}
+
+/* ========================================== 
+   5. BLOCO GLOBAL: RODAPÉ 
    ========================================== */
-.secao-2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+.rodape {
+  text-align: center;
+  color: orange;
+  padding: 15px 0;
 }
 
-.secao-2 h2 {
-    margin-top: 25px;
-    font-size: 35px;
-    margin-bottom: 40px;
+@media screen and (max-width: 768px) {
+  .produto-card__imagem { height: 390px; }
+  .produto-card__legenda { font-size: 24px; }
 }
 
-.catalogo-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-}
-
-.catalogo-container a {
-    text-decoration: none;
-    color: rgb(255, 140, 0);
-}
-
-
-/* =========================================
-   6. RODAPE DAS PÁGINAS
-   =====================================*/
-.rodape{
-    text-align: center;
-    color: orange;
+@media screen and (max-width: 480px) {
+  .produto-card__imagem { height: 190px; }
+  .produto-card__legenda { font-size: 15px; }
 }

@@ -257,8 +257,67 @@ const PRODUTOS = [
     }
 ];
 
+// O catálogo passa a ser a fonte de verdade da API. A lista antiga é limpa
+// assim que o script é carregado para não misturar dados estáticos com o banco.
+PRODUTOS.length = 0;
+
+const API_BASE_URL = window.LARTS_API_URL || "http://localhost:8080";
+const MOEDA = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+const CATEGORIAS = {
+    VESTIDOS: "Vestidos",
+    CONJUNTOS_FEMININOS: "Conjuntos Femininos",
+    CAMISAS_MASCULINAS: "Camisas Masculinas"
+};
+
+function escaparHtml(valor) {
+    return String(valor).replace(/[&<>"']/g, caractere => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    })[caractere]);
+}
+
+function caminhoImagem(imgUrl) {
+    if (!imgUrl || /^(https?:|data:|\/|\.\.\/)/.test(imgUrl)) return imgUrl || "";
+    return "../" + imgUrl;
+}
+
+function normalizarProduto(produto) {
+    const preco = Number(produto.price);
+    if (!Number.isFinite(preco)) {
+        throw new Error("A API retornou um produto com preço inválido.");
+    }
+
+    return {
+        id: produto.id,
+        nome: produto.name,
+        descricao: produto.description || "",
+        imagem: caminhoImagem(produto.imgUrl),
+        preco,
+        precoCentavos: Math.round(preco * 100),
+        categoria: CATEGORIAS[produto.category] || produto.category,
+        categoriaApi: produto.category,
+        tamanhos: Array.isArray(produto.availableSizes) ? produto.availableSizes : []
+    };
+}
+
+async function carregarProdutosDaApi() {
+    const resposta = await fetch(`${API_BASE_URL}/product`);
+    if (!resposta.ok) {
+        throw new Error("Não foi possível carregar o catálogo da loja.");
+    }
+
+    const produtos = await resposta.json();
+    if (!Array.isArray(produtos)) {
+        throw new Error("A resposta do catálogo está em um formato inválido.");
+    }
+
+    PRODUTOS.splice(0, PRODUTOS.length, ...produtos.map(normalizarProduto));
+    return PRODUTOS;
+}
+
+const PRODUTOS_PRONTOS = carregarProdutosDaApi();
+
 function buscarProduto(id) {
-    return PRODUTOS.find(produto => produto.id === id);
+    return PRODUTOS.find(produto => String(produto.id) === String(id));
 }
 
 function abrirProduto(id) {
@@ -266,7 +325,7 @@ function abrirProduto(id) {
 }
 
 function formatarPreco(preco) {
-    return "R$ " + preco;
+    return MOEDA.format(Number(preco));
 }
 
 function obterFavoritos() {
@@ -342,19 +401,19 @@ function prepararPaginaProduto() {
     area.innerHTML = `
         <div class="produto-destaque">
             <div class="produto-destaque__imagem-area">
-                <img class="produto-destaque__imagem" src="${produto.imagem}" alt="${produto.nome}">
+                <img class="produto-destaque__imagem" src="${escaparHtml(produto.imagem)}" alt="${escaparHtml(produto.nome)}">
             </div>
 
             <div class="produto-destaque__resumo">
-                <p class="produto-destaque__categoria">${produto.categoria}</p>
-                <h1 class="produto-destaque__titulo">${produto.nome}</h1>
+                <p class="produto-destaque__categoria">${escaparHtml(produto.categoria)}</p>
+                <h1 class="produto-destaque__titulo">${escaparHtml(produto.nome)}</h1>
                 <p class="produto-destaque__preco">${formatarPreco(produto.preco)}</p>
                 <p class="produto-destaque__parcela">Preço ilustrativo: atualize conforme o valor real.</p>
 
                 <div class="selecao-tamanho">
                     <h2 class="selecao-tamanho__titulo">Escolha o tamanho</h2>
                     <div class="selecao-tamanho__opcoes">
-                        ${produto.tamanhos.map(tamanho => `<button type="button" class="selecao-tamanho__botao" data-tamanho="${tamanho}">${tamanho}</button>`).join("")}
+                        ${produto.tamanhos.map(tamanho => `<button type="button" class="selecao-tamanho__botao" data-tamanho="${escaparHtml(tamanho)}">${escaparHtml(tamanho)}</button>`).join("")}
                     </div>
                     <p id="aviso-tamanho" class="selecao-tamanho__aviso">Selecione um tamanho antes de adicionar ao carrinho.</p>
                 </div>
@@ -366,11 +425,10 @@ function prepararPaginaProduto() {
 
         <section class="produto-informacoes">
             <h2 class="produto-informacoes__titulo">Descrição do produto</h2>
-            <p>${produto.descricao}</p>
+            <p>${escaparHtml(produto.descricao)}</p>
             <h2 class="produto-informacoes__titulo">Informações adicionais</h2>
-            <p><strong>Categoria:</strong> ${produto.categoria}</p>
-            <p><strong>Tamanhos disponíveis:</strong> ${produto.tamanhos.join(", ")}</p>
-            <p class="produto-informacoes__nota">Estas informações são exemplos. Edite os dados no arquivo <strong>produtos.js</strong>.</p>
+            <p><strong>Categoria:</strong> ${escaparHtml(produto.categoria)}</p>
+            <p><strong>Tamanhos disponíveis:</strong> ${escaparHtml(produto.tamanhos.join(", "))}</p>
         </section>
     `;
 
@@ -404,29 +462,48 @@ function prepararPaginaProduto() {
     });
 }
 
-// Na página inicial, transforma as imagens de roupas em links para o detalhe.
-// Assim não é necessário alterar manualmente cada imagem do catálogo.
-function ativarLinksDaPaginaInicial() {
-    if (!document.querySelector(".produto-card__figura")) return;
+function criarCardProduto(produto) {
+    return `<article class="produto-card" data-produto-id="${escaparHtml(produto.id)}">
+        <figure class="produto-card__figura">
+            <img class="produto-card__imagem produto-card__imagem--clicavel" src="${escaparHtml(produto.imagem)}" alt="${escaparHtml(produto.nome)}" title="Ver detalhes de ${escaparHtml(produto.nome)}">
+            <hr class="produto-card__divisor">
+            <figcaption class="produto-card__legenda">${escaparHtml(produto.nome)}<br>${formatarPreco(produto.preco)}</figcaption>
+        </figure>
+    </article>`;
+}
 
-    document.querySelectorAll(".produto-card__figura img").forEach(imagem => {
-        const nomeArquivo = imagem.getAttribute("src").split("/").pop();
-        const produto = PRODUTOS.find(item => item.imagem.endsWith("/" + nomeArquivo));
+function renderizarCatalogos() {
+    const secoes = {
+        vestidos: "VESTIDOS",
+        conjuntos: "CONJUNTOS_FEMININOS",
+        camisaMasculina: "CAMISAS_MASCULINAS"
+    };
 
-        if (produto) {
-            imagem.classList.add("produto-card__imagem--clicavel");
-            imagem.title = "Ver detalhes de " + produto.nome;
-            imagem.addEventListener("click", function(event) {
-                // Impede que o clique também abra o link da categoria que envolve a imagem.
-                event.preventDefault();
-                event.stopPropagation();
-                abrirProduto(produto.id);
-            });
-        }
+    Object.entries(secoes).forEach(([idSecao, categoria]) => {
+        const lista = document.querySelector(`#${idSecao} .catalogo__produtos`);
+        if (!lista) return;
+
+        lista.innerHTML = PRODUTOS
+            .filter(produto => produto.categoriaApi === categoria)
+            .map(criarCardProduto)
+            .join("");
+    });
+
+    document.querySelectorAll("[data-produto-id]").forEach(card => {
+        card.addEventListener("click", () => abrirProduto(card.dataset.produtoId));
     });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    prepararPaginaProduto();
-    ativarLinksDaPaginaInicial();
+document.addEventListener("DOMContentLoaded", async function() {
+    try {
+        await PRODUTOS_PRONTOS;
+        renderizarCatalogos();
+        prepararPaginaProduto();
+    } catch (erro) {
+        const area = document.getElementById("detalhe-produto");
+        if (area) {
+            area.innerHTML = '<p class="produto-pagina__nao-encontrado">Não foi possível carregar o produto. Verifique se a API está em execução.</p>';
+        }
+        console.error(erro);
+    }
 });

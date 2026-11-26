@@ -3,7 +3,6 @@
     'use strict';
 
     const CHAVE_CARRINHO = 'larts-carrinho';
-    const CHAVE_PEDIDOS = 'larts-pedidos';
     const moeda = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
     const paginaCarrinho = document.getElementById('pagina-carrinho');
     const paginaFinalizacao = document.getElementById('pagina-finalizacao');
@@ -24,6 +23,10 @@
 
     function dinheiro(centavos) {
         return moeda.format(centavos / 100);
+    }
+
+    function dinheiroApi(valor) {
+        return moeda.format(Number(valor));
     }
 
     function lerLista(chave) {
@@ -60,7 +63,7 @@
     function carregarCarrinho() {
         const grupos = new Map();
         for (const item of lerLista(CHAVE_CARRINHO)) {
-            const produto = item && PRODUTOS.find(produto => produto.id === item.produtoId);
+            const produto = item && PRODUTOS.find(produto => String(produto.id) === String(item.produtoId));
             if (!produto || !produto.tamanhos.includes(item.tamanho)) {
                 throw new Error('Há um produto ou tamanho indisponível no carrinho. Use “Esvaziar carrinho” para refazer a seleção.');
             }
@@ -84,7 +87,7 @@
             }
         }
         return [...grupos.values()].map(item => {
-            const produto = PRODUTOS.find(produto => produto.id === item.produtoId);
+            const produto = PRODUTOS.find(produto => String(produto.id) === String(item.produtoId));
             const unitarioCentavos = precoCentavos(produto);
             const subtotalCentavos = unitarioCentavos * item.quantidade;
             if (!Number.isSafeInteger(subtotalCentavos)) throw new Error('Valor acima do limite permitido.');
@@ -207,14 +210,22 @@
         paginaFinalizacao.hidden = true;
         const area = document.getElementById('confirmacao');
         area.hidden = false;
-        area.innerHTML = `<h2 id="titulo-confirmacao" tabindex="-1">Pedido demonstrativo registrado!</h2>
-            <p>Número <strong>${escapar(pedido.id)}</strong></p>
-            <p>Registrado em ${escapar(new Date(pedido.criadoEm).toLocaleString('pt-BR'))}.</p>
-            <p>Olá, ${escapar(pedido.cliente.nome)}. Sua seleção foi salva neste navegador.</p>
-            <p>Total <strong>${dinheiro(pedido.totalCentavos)}</strong> · frete gratuito.</p>
-            <p>Esta demonstração não realiza cobrança nem envia o pedido à loja.</p>
+        area.innerHTML = `<h2 id="titulo-confirmacao" tabindex="-1">Pedido registrado com sucesso!</h2>
+            <p>Número <strong>${escapar(pedido.orderNumber)}</strong></p>
+            <p>Registrado em ${escapar(new Date(pedido.createdAt).toLocaleString('pt-BR'))}.</p>
+            <p>Olá, ${escapar(pedido.customerName)}. Seu pedido foi enviado à loja.</p>
+            <p>Total <strong>${dinheiroApi(pedido.total)}</strong> · frete gratuito.</p>
             <a class="botao" href="index.html#catalogo">Voltar ao catálogo</a>`;
         document.getElementById('titulo-confirmacao').focus();
+    }
+
+    async function mensagemDaResposta(resposta) {
+        try {
+            const corpo = await resposta.json();
+            return corpo.detail || corpo.message || 'A API não conseguiu registrar o pedido.';
+        } catch {
+            return 'A API não conseguiu registrar o pedido.';
+        }
     }
 
     async function finalizar(evento) {
@@ -224,7 +235,7 @@
         const botao = document.getElementById('confirmar-pedido');
         botao.disabled = true;
         try {
-            const executar = () => {
+            const executar = async () => {
                 const itens = carregarCarrinho();
                 if (!itens.length) throw new Error('Seu carrinho está vazio.');
                 if (JSON.stringify(itens) !== assinaturaExibida) {
@@ -232,22 +243,33 @@
                     throw new Error('O carrinho mudou. Confira o resumo atualizado e confirme novamente.');
                 }
                 const dados = Object.fromEntries(new FormData(formulario));
-                const pedido = {
-                    id: 'LARTS-' + crypto.randomUUID(),
-                    criadoEm: new Date().toISOString(),
-                    status: 'demonstracao-local',
-                    cliente: { nome: dados.nome, email: dados.email, telefone: dados.telefone },
-                    endereco: { cep: dados.cep, logradouro: dados.logradouro, numero: dados.numero, complemento: dados.complemento, bairro: dados.bairro, cidade: dados.cidade, estado: dados.estado },
-                    itens,
-                    subtotalCentavos: totalCarrinho(itens),
-                    freteCentavos: 0,
-                    totalCentavos: totalCarrinho(itens)
-                };
-                // O integrante 4 pode substituir esta persistência por sua integração.
-                // Só limpar o carrinho após a confirmação de gravação do pedido.
-                const pedidos = lerLista(CHAVE_PEDIDOS);
-                pedidos.push(pedido);
-                localStorage.setItem(CHAVE_PEDIDOS, JSON.stringify(pedidos));
+                const resposta = await fetch(`${API_BASE_URL}/orders`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        customerName: dados.nome,
+                        customerEmail: dados.email,
+                        customerPhone: dados.telefone,
+                        shippingAddress: {
+                            cep: dados.cep,
+                            street: dados.logradouro,
+                            number: dados.numero,
+                            complement: dados.complemento || null,
+                            district: dados.bairro,
+                            city: dados.cidade,
+                            state: dados.estado
+                        },
+                        items: itens.map(item => ({
+                            productId: item.produtoId,
+                            selectedSize: item.tamanho,
+                            quantity: item.quantidade
+                        }))
+                    })
+                });
+                if (!resposta.ok) {
+                    throw new Error(await mensagemDaResposta(resposta));
+                }
+                const pedido = await resposta.json();
                 mostrarConfirmacao(pedido);
                 formulario.reset();
                 try {
@@ -259,7 +281,7 @@
             };
             // Serializa confirmações simultâneas entre abas em navegadores compatíveis.
             if (navigator.locks) await navigator.locks.request('larts-finalizar-pedido', executar);
-            else executar();
+            else await executar();
         } catch (erro) {
             mensagem('Não foi possível finalizar. ' + erro.message);
         } finally {
@@ -268,42 +290,48 @@
         }
     }
 
-    if (paginaCarrinho) {
-        paginaCarrinho.addEventListener('change', alterarItem);
-        paginaCarrinho.addEventListener('click', alterarItem);
-        const limpar = document.createElement('button');
-        limpar.type = 'button';
-        limpar.className = 'carrinho__remover';
-        limpar.textContent = 'Esvaziar carrinho';
-        limpar.addEventListener('click', () => {
-            if (!window.confirm('Remover todos os produtos do carrinho?')) return;
-            try {
-                localStorage.removeItem(CHAVE_CARRINHO);
-                mensagem('Carrinho esvaziado.');
+    PRODUTOS_PRONTOS.then(() => {
+        if (paginaCarrinho) {
+            paginaCarrinho.addEventListener('change', alterarItem);
+            paginaCarrinho.addEventListener('click', alterarItem);
+            const limpar = document.createElement('button');
+            limpar.type = 'button';
+            limpar.className = 'carrinho__remover';
+            limpar.textContent = 'Esvaziar carrinho';
+            limpar.addEventListener('click', () => {
+                if (!window.confirm('Remover todos os produtos do carrinho?')) return;
+                try {
+                    localStorage.removeItem(CHAVE_CARRINHO);
+                    mensagem('Carrinho esvaziado.');
+                    atualizar();
+                } catch {
+                    mensagem('Não foi possível acessar o armazenamento do navegador.');
+                }
+            });
+            paginaCarrinho.append(limpar);
+        }
+        if (formulario) {
+            const cidade = formulario.elements.cidade;
+            const avisoTimon = document.getElementById('aviso-timon');
+            cidade.addEventListener('change', () => {
+                const nomeCidade = cidade.value.trim().normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '').toLowerCase();
+                const ehTimon = /^timon(?:\s*[-/]\s*(?:ma|maranhao))?$/.test(nomeCidade);
+                if (ehTimon && !avisoTimon.open) avisoTimon.showModal();
+            });
+            formulario.addEventListener('submit', finalizar);
+            formulario.addEventListener('input', evento => evento.target.setCustomValidity(''));
+        }
+        window.addEventListener('storage', evento => {
+            if (evento.key === CHAVE_CARRINHO || evento.key === null) {
                 atualizar();
-            } catch {
-                mensagem('Não foi possível acessar o armazenamento do navegador.');
+                if (!concluido) mensagem('O carrinho foi atualizado em outra aba. Confira os itens.');
             }
         });
-        paginaCarrinho.append(limpar);
-    }
-    if (formulario) {
-        const cidade = formulario.elements.cidade;
-        const avisoTimon = document.getElementById('aviso-timon');
-        cidade.addEventListener('change', () => {
-            const nomeCidade = cidade.value.trim().normalize('NFD')
-                .replace(/[\u0300-\u036f]/g, '').toLowerCase();
-            const ehTimon = /^timon(?:\s*[-/]\s*(?:ma|maranhao))?$/.test(nomeCidade);
-            if (ehTimon && !avisoTimon.open) avisoTimon.showModal();
-        });
-        formulario.addEventListener('submit', finalizar);
-        formulario.addEventListener('input', evento => evento.target.setCustomValidity(''));
-    }
-    window.addEventListener('storage', evento => {
-        if (evento.key === CHAVE_CARRINHO || evento.key === null) {
-            atualizar();
-            if (!concluido) mensagem('O carrinho foi atualizado em outra aba. Confira os itens.');
-        }
+        atualizar();
+    }).catch(erro => {
+        mensagem('Não foi possível carregar os produtos da API. ' + erro.message);
+        if (formulario) formulario.hidden = true;
+        if (paginaCarrinho) document.getElementById('avancar').hidden = true;
     });
-    atualizar();
 })();

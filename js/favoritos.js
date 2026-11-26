@@ -43,9 +43,9 @@
             throw new Error("A lista de favoritos está em um formato inválido.");
         }
 
-        const idsDisponiveis = new Set(PRODUTOS.map(produto => produto.id));
+        const idsDisponiveis = new Set(PRODUTOS.map(produto => String(produto.id)));
         return [...new Set(favoritos)]
-            .filter(id => typeof id === "string" && idsDisponiveis.has(id));
+            .filter(id => idsDisponiveis.has(String(id)));
     }
 
     function salvarFavoritos(favoritos) {
@@ -77,7 +77,7 @@
 
         const preco = document.createElement("p");
         preco.className = "card-favorito__preco";
-        preco.textContent = `R$ ${produto.preco}`;
+        preco.textContent = formatarPreco(produto.preco);
         link.appendChild(preco);
 
         const botaoRemover = document.createElement("button");
@@ -96,7 +96,7 @@
         try {
             const favoritos = lerFavoritos();
             const produtosFavoritos = favoritos
-                .map(id => PRODUTOS.find(produto => produto.id === id))
+                .map(id => PRODUTOS.find(produto => String(produto.id) === String(id)))
                 .filter(Boolean);
 
             lista.replaceChildren(...produtosFavoritos.map(criarCard));
@@ -121,7 +121,7 @@
 
         try {
             const id = botao.dataset.remover;
-            salvarFavoritos(lerFavoritos().filter(favorito => favorito !== id));
+            salvarFavoritos(lerFavoritos().filter(favorito => String(favorito) !== String(id)));
             renderizar();
         } catch (erro) {
             mensagemErro.textContent = erro.message;
@@ -135,5 +135,9 @@
         }
     });
 
-    renderizar();
+    PRODUTOS_PRONTOS.then(renderizar).catch(erro => {
+        mensagemVazia.hidden = true;
+        mensagemErro.textContent = erro.message;
+        mensagemErro.hidden = false;
+    });
 })();
